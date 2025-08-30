@@ -3157,14 +3157,26 @@ fn ensure_no_commit_loop(
     Ok(())
 }
 
-/// Jujutsu (An experimental VCS)
-///
+fn cli_styles() -> clap::builder::styling::Styles {
+    use clap::builder::styling::{AnsiColor, Effects, Styles};
+
+    Styles::styled()
+        .header(AnsiColor::Green.on_default().effects(Effects::BOLD))
+        .literal(AnsiColor::BrightCyan.on_default())
+        .placeholder(AnsiColor::BrightBlack.on_default())
+        .usage(AnsiColor::Green.on_default())
+}
+
 /// To get started, see the tutorial [`jj help -k tutorial`].
 ///
 /// [`jj help -k tutorial`]:
 ///     https://jj-vcs.github.io/jj/latest/tutorial/
 #[derive(clap::Parser, Clone, Debug)]
-#[command(name = "jj")]
+#[command(
+    name = "jj",
+    styles = cli_styles(),
+    before_help = "\x1b[32m    ○\x1b[0m\n\x1b[32m  ○ \x1b[0m\x1b[90m│\x1b[0m   \x1b[1m\x1b[32mJujutsu\x1b[0m\n\x1b[90m  │\x1b[0m\x1b[90m─╯\x1b[0m   \x1b[90mA simple but powerful VCS\x1b[0m\n\x1b[90m ─╯\x1b[0m"
+)]
 pub struct Args {
     #[command(flatten)]
     pub global_args: GlobalArgs,

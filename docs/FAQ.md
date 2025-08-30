@@ -12,8 +12,8 @@ To move bookmarks, use `jj bookmark move`.
 `jj git push --all` pushes all _bookmarks_, not all revisions. You have two
 options:
 
-* Using `jj git push --change` will automatically create a bookmark and push it.
-* Using `jj bookmark` commands to create or move a bookmark to either the commit
+- Using `jj git push --change` will automatically create a bookmark and push it.
+- Using `jj bookmark` commands to create or move a bookmark to either the commit
   you want to push or a descendant on it. Unlike Git, Jujutsu doesn't do this
   automatically (see previous question).
 
@@ -59,7 +59,7 @@ revisions)" is shown to indicate that `musnqzvt` descends from `tylynnzk`, but
 the nodes connecting them are not in the revset.
 
 To view the elided revisions, change the [revset expression](revsets.md) so it
-includes the connecting revisions.  The `connected()` revset function does
+includes the connecting revisions. The `connected()` revset function does
 exactly this:
 
 ```sh
@@ -230,7 +230,7 @@ into your branch.
 
 Suppose you have a commit "Add new feature":
 
-```shell
+```shellsession
 $ jj log
 @  xxxxxxxx me@example.com 2024-08-21 11:13:21 ef612875
 │  Add new feature
@@ -241,7 +241,7 @@ $ jj log
 
 First, create a new commit branched from main and add your private changes:
 
-```shell
+```shellsession
 $ jj new main -m "private: my credentials"
 Working copy  (@) now at: wwwwwwww 861de9eb (empty) private: my credentials
 Parent commit (@-)      : yyyyyyyy b624cf12 main | Existing work
@@ -253,7 +253,7 @@ $ echo '{ "password": "p@ssw0rd1" }' > secret_config.json
 Now create a merge commit with the branch you're working on and the private
 commit:
 
-```shell
+```shellsession
 $ jj new xxxxxxxx wwwwwwww
 Working copy  (@) now at: vvvvvvvv ac4d9fbe (empty) (no description set)
 Parent commit (@-)      : xxxxxxxx ef612875 Add new feature
@@ -283,7 +283,7 @@ As you work, squash your changes using `jj squash --into xxxxxxxx`.
 If you need a new empty commit on top of `xxxxxxxx` you can use the
 `--insert-after` and `--insert-before` options (`-A` and `-B` for short):
 
-```shell
+```shellsession
 # Insert a new commit after xxxxxxxx
 $ jj new --no-edit -A xxxxxxxx -m "Another feature"
 Working copy  (@) now at: uuuuuuuu 1c3cff09 (empty) Another feature
@@ -298,7 +298,7 @@ Parent commit (@-)      : yyyyyyyy b624cf12 Existing work
 To avoid pushing change _wwwwwwww_ by mistake, use the configuration
 [git.private-commits](config.md#set-of-private-commits):
 
-```shell
+```shellsession
 jj config set --user git.private-commits "'''description(glob:'private:*')'''"
 ```
 
@@ -332,8 +332,7 @@ option. The obsolete versions will be marked as "hidden" and will have the same
 change ID, but will have different commit IDs. This represents the [change]
 evolving over time.
 
-[predecessors]:
-  #jj-is-said-to-record-the-working-copy-after-jj-log-and-every-other-command-where-can-i-see-these-automatic-saves
+[predecessors]: #jj-is-said-to-record-the-working-copy-after-jj-log-and-every-other-command-where-can-i-see-these-automatic-saves
 
 For example, this is what the evolog might look like after you made two edits to
 the same change:
@@ -482,7 +481,6 @@ $ jj diff --from b80 --to @- # No output means these are identical
 $ jj diff --from 31a --to @  # No output means these are identical
 ```
 
-
 ### How do I resume working on an existing change?
 
 There are two ways to resume working on an earlier change: `jj new` then `jj squash`,
@@ -524,6 +522,7 @@ empty commit. To revert the changes merged in from the second parent, instead
 use `jj restore --from <first parent>` .
 
 Example:
+
 ```text
 @
 |
@@ -533,10 +532,11 @@ B D
 |/
 A
 ```
+
 To revert the merge in `C`, create a new commit with `jj new C`,
 then `jj restore --from B`, and then describe the message
 with something like `jj desc -m "Revert the merge of D into B`. Now, commit `@`
-undoes the merge of `D` into  `B`. If necessary, you can now rebase it
+undoes the merge of `D` into `B`. If necessary, you can now rebase it
 elsewhere, e.g. `jj rebase -r @ -d main`.
 
 ### How do I deal with divergent changes ('??' after the [change ID])?
@@ -557,6 +557,7 @@ commits associated with it.
 ### How do I integrate Jujutsu with Gerrit?
 
 Add this to your configuration to automatically add Change-Id trailers to commit messages:
+
 ```toml
 [templates]
 commit_trailers = '''
@@ -566,6 +567,7 @@ if(
 )
 '''
 ```
+
 Note: If you don't check for the presence of the "Change-Id" trailer, you might
 occasionally get duplicate trailers.
 This happens when Jujutsu's change-id isn't in sync with the "Change-Id" trailer.
@@ -584,6 +586,7 @@ We hope to integrate with Gerrit natively in the future.
 ### I'm experiencing `jj` command issues in a Vite/Vitest project, how do I fix this?
 
 When using Vite or Vitest in a Jujutsu repository, you may experience:
+
 - Very slow vitest startup times
 - Timeout errors in `jj` terminal commands
 - Errors with 3rd party visual tools like `jjk` or `visual-jj`
@@ -595,18 +598,17 @@ which can slow down both tools and occasionally cause file access conflicts.
 
 **Solution**: Configure Vite to ignore the `.jj` directory by adding it to the
 `server.watch.ignored` array inside your Vite configuration, for example:
+
 ```js
 // vite.config.js
 export default defineConfig({
   // ... other config like plugins, test setup, etc.
   server: {
     watch: {
-      ignored: [
-        "**/.jj/**",
-      ]
-    }
+      ignored: ["**/.jj/**"],
+    },
   },
-})
+});
 ```
 
 Note: There was a [request](https://github.com/vitejs/vite/issues/20036) to include `.jj`
@@ -616,32 +618,25 @@ in the default ignore list, but manual configuration remains the recommended app
 
 There are some trade-offs and there is no definitive answer yet.
 
-* Using `jj-lib` avoids parsing command output and makes error handling easier.
-* `jj-lib` is not a stable API, so you may have to make changes to your tool
-when the API changes.
-* The CLI is not stable either, so you may need to make your tool detect the
-different versions and call the right command.
-* Using the CLI means that your tool will work with custom-built `jj` binaries,
-like the one at Google (if you're using the library, you will not be able to
-detect custom backends and more).
-
+- Using `jj-lib` avoids parsing command output and makes error handling easier.
+- `jj-lib` is not a stable API, so you may have to make changes to your tool
+  when the API changes.
+- The CLI is not stable either, so you may need to make your tool detect the
+  different versions and call the right command.
+- Using the CLI means that your tool will work with custom-built `jj` binaries,
+  like the one at Google (if you're using the library, you will not be able to
+  detect custom backends and more).
 
 [bookmarks_conflicts]: bookmarks.md#conflicts
-
 [change]: glossary.md#change
 [change ID]: glossary.md#change-id
 [co-located]: glossary.md#co-located-repos
 [commit ID]: glossary.md#commit-id
 [commits]: glossary.md#commit
 [config]: config.md
-
 [gerrit-integration]: https://gist.github.com/thoughtpolice/8f2fd36ae17cd11b8e7bd93a70e31ad6
 [gitignore]: https://git-scm.com/docs/gitignore
-
 [operator]: revsets.md#operators
-
 [revsets]: revsets.md
-
 [templates]: templates.md
-
 [reordering]: https://github.com/jj-vcs/jj/issues/1531

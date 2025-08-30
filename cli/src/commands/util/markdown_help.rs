@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use std::io::Write as _;
+use std::path::PathBuf;
 
 use crate::cli_util::CommandHelper;
 use crate::command_error::CommandError;
@@ -20,16 +20,16 @@ use crate::ui::Ui;
 
 /// Print the CLI help for all subcommands in Markdown
 #[derive(clap::Args, Clone, Debug)]
-pub struct UtilMarkdownHelp {}
+pub struct UtilMarkdownHelp {
+    /// The path where the mdx files will be written
+    path: PathBuf,
+}
 
 pub fn cmd_util_markdown_help(
-    ui: &mut Ui,
+    _ui: &mut Ui,
     command: &CommandHelper,
-    _args: &UtilMarkdownHelp,
+    args: &UtilMarkdownHelp,
 ) -> Result<(), CommandError> {
-    // If we ever need more flexibility, the code of `clap_markdown` is simple and
-    // readable. We could reimplement the parts we need without trouble.
-    let markdown = clap_markdown::help_markdown_command(command.app()).into_bytes();
-    ui.stdout().write_all(&markdown)?;
+    clap_markdown::generate_to(command.app(), &args.path)?;
     Ok(())
 }

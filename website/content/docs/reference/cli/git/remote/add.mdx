@@ -1,0 +1,34 @@
+---
+title: jj git remote add
+isCommand: true
+---
+
+Add a Git remote
+
+```shell title="Usage"
+jj git remote add [OPTIONS] <REMOTE> <URL>
+```
+
+### Arguments
+
+- `<REMOTE>` — The remote's name
+- `<URL>` — The remote's URL or path
+
+  Local path will be resolved to absolute form.
+
+### Options
+
+- `--fetch-tags <FETCH_TAGS>` — Configure when to fetch tags
+
+  Default value: `included`
+
+  Possible values:
+
+  - `all`:
+    Always fetch all tags
+  - `included`:
+    Only fetch tags that point to objects that are already being transmitted
+  - `none`:
+    Do not fetch any tags
+
+

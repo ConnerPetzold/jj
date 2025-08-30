@@ -1,0 +1,1 @@
+const e=["index","getting-started","FAQ","cli-reference","testimonials","community-tools","concepts","guides","reference","comparisons","technical-details","contributing","design-docs","roadmap","changelog"],t=!0,o={pages:e,root:!0};export{o as default,e as pages,t as root};

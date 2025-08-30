@@ -5,14 +5,14 @@
 Send a PR similar to <https://github.com/jj-vcs/jj/pull/5215>. Feel free to
 copy-edit the changelog in order to:
 
-* Populate "Release highlights" if relevant
-* Put more important items first so the reader doesn't miss them
-* Make items consistent when it comes to language and formatting
-* Catch any misplaced changelog items by looking at the CHANGELOG diff.
+- Populate "Release highlights" if relevant
+- Put more important items first so the reader doesn't miss them
+- Make items consistent when it comes to language and formatting
+- Catch any misplaced changelog items by looking at the CHANGELOG diff.
 
 To get the CHANGELOG diff, you can run
 
-```shell
+```shellsession
 jj log -r 'heads(tags())'  # Check that this shows the previous version
 jj diff --from 'heads(tags())' --to main CHANGELOG.md
 ```
@@ -20,7 +20,7 @@ jj diff --from 'heads(tags())' --to main CHANGELOG.md
 Producing the list of contributors is a bit annoying. The current suggestion is
 to run something like this:
 
-```shell
+```shellsession
 root=$(jj log --no-graph -r 'heads(tags(glob:"v*.*.*") & ::trunk())' -T commit_id)
 filter='
    map(.commits[] | select(.author.login | endswith("[bot]") | not))
@@ -35,7 +35,7 @@ gh api "/repos/jj-vcs/jj/compare/$root...main" --paginate | jq -sr "$filter" | s
 
 Alternatively, the list can be produced locally:
 
-```shell
+```shellsession
 jj log --no-graph -r 'heads(tags())..main' -T '"* " ++ author ++ "\n"' | sort -fu
 ```
 
@@ -61,7 +61,7 @@ Get the PR through review and get it merged as usual.
 
 Go to a terminal and create a new clone of the repo [^1]:
 
-```shell
+```shellsession
 cd $(mktemp -d)
 jj git clone https://github.com/jj-vcs/jj
 cd jj
@@ -70,15 +70,15 @@ jj new v0.<number>.0
 
 Publish each crate:
 
-```shell
+```shellsession
 (cd lib/proc-macros && cargo publish)
 (cd lib && cargo publish)
 (cd cli && cargo publish)
 ```
 
-
-[^1]: We recommend publishing from a new clone because `cargo publish` will
-      archive ignored files if they match the patterns in `[include]`
-      ([example](https://github.com/jj-vcs/jj/blob/b95628c398c6c3d11f41bdf53d0aef11f92ee96d/lib/Cargo.toml#L15-L22)),
-      so it's a security risk to run it an existing clone where you may have
-      left sensitive content in an ignored file.
+[^1]:
+    We recommend publishing from a new clone because `cargo publish` will
+    archive ignored files if they match the patterns in `[include]`
+    ([example](https://github.com/jj-vcs/jj/blob/b95628c398c6c3d11f41bdf53d0aef11f92ee96d/lib/Cargo.toml#L15-L22)),
+    so it's a security risk to run it an existing clone where you may have
+    left sensitive content in an ignored file.

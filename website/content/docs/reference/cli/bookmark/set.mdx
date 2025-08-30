@@ -1,0 +1,22 @@
+---
+title: jj bookmark set
+isCommand: true
+---
+
+Create or update a bookmark to point to a certain commit
+
+```shell title="Usage"
+jj bookmark set [OPTIONS] <NAMES>...
+```
+
+**Command Alias:** `s`
+
+### Arguments
+
+- `<NAMES>` — The bookmarks to update
+
+### Options
+
+- `-r`, `--revision <REVSET>` [alias: `to`] — The bookmark's target revision
+- `-B`, `--allow-backwards` — Allow moving the bookmark backwards or sideways
+

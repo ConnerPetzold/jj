@@ -1,6 +1,5 @@
 # How to Contribute
 
-
 ## Policies
 
 We'd love to accept your patches and contributions to this project. There are
@@ -35,7 +34,7 @@ test and document.
 
 The commit message should describe the changes in the commit;
 the PR description can even be empty, but feel free to include a personal
-message. We start the commit message with `<topic>: `  and don't use
+message. We start the commit message with `<topic>: ` and don't use
 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). This means if
 you modified a command in the CLI, use its name as the topic, e.g.
 `next/prev: <your-modification>` or `conflicts: <your-modification>`. We don't
@@ -56,7 +55,7 @@ information on using pull requests.
 When you address comments on a PR, don't make the changes in a commit on top (as
 is typical on GitHub). Instead, please make the changes in the appropriate
 commit. You can do that by creating a new commit on top of the initial commit
- (`jj new <commit>`) and then squash in the changes when you're done (`jj squash`).
+(`jj new <commit>`) and then squash in the changes when you're done (`jj squash`).
 `jj git push`
 will automatically force-push the bookmark.
 
@@ -83,7 +82,7 @@ Guidelines](https://opensource.google/conduct/).
 ## Contributing large patches
 
 Before sending a PR for a large change which designs/redesigns or reworks an
-existing component, we require an architecture review from  multiple
+existing component, we require an architecture review from multiple
 stakeholders, which we do with [Design Docs](design_docs.md), see the
 [process here](design_docs.md#process).
 
@@ -172,7 +171,7 @@ These are listed roughly in order of decreasing importance.
    The `--workspace` flag is needed to run the tests on all crates; by default,
    only the crate in the current directory is tested.
 
-2. GitHub CI checks require that the code is formatted with the *nightly*
+2. GitHub CI checks require that the code is formatted with the _nightly_
    version of `rustfmt`. To do this on your computer, install the nightly
    toolchain and use `cargo +nightly fmt`.
 
@@ -189,17 +188,16 @@ These are listed roughly in order of decreasing importance.
 
 6. To run tests more quickly, use `cargo nextest run --workspace`. To
    use `nextest` with `insta`, use `cargo insta test --workspace
-   --test-runner nextest`.
+--test-runner nextest`.
 
    On Linux, you may be able to speed up `nextest` even further by using
    the `mold` linker, as explained below.
-
 
 ### Configuring `jj fix` to run `rustfmt`
 
 Run this in the jj repo:
 
-```shell
+```shellsession
 jj config set --repo fix.tools.rustfmt '{ command = ["rustfmt", "+nightly"], patterns = ["glob:**/*.rs"] }'
 ```
 
@@ -207,7 +205,7 @@ jj config set --repo fix.tools.rustfmt '{ command = ["rustfmt", "+nightly"], pat
 > since the devShell is already configured to pull in a nightly version of
 > rustfmt:
 >
-> ```shell
+> ```shellsession
 > jj config set --repo fix.tools.rustfmt '{ command = ["rustfmt"], patterns = ["glob:**/*.rs"] }'
 > ```
 
@@ -225,7 +223,7 @@ an issue worth solving using a system monitoring tool such as `htop`.
 
 A simple way to use `mold` is via the `-run` option, e.g.:
 
-```shell
+```shellsession
 mold -run cargo insta test --workspace --test-runner nextest
 ```
 
@@ -310,7 +308,7 @@ version and the dependencies needed to build the docs. Install it like so:
 
 === "macOS/Linux"
 
-    ```shell
+    ```shellsession
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
 
@@ -318,25 +316,25 @@ version and the dependencies needed to build the docs. Install it like so:
         If you don't have `~/.local/bin` in your `PATH`, the installer will
         modify your shell profile. To avoid it:
 
-        ```shell
+        ```shellsession
         curl -LsSf https://astral.sh/uv/install.sh | env INSTALLER_NO_MODIFY_PATH=1 sh
         ```
 
 === "Windows"
 
-    ```shell
+    ```shellsession
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
     ```
 
 === "Homebrew"
 
-    ```shell
+    ```shellsession
     brew install uv
     ```
 
 === "Cargo"
 
-    ```shell
+    ```shellsession
     # This might take a while
     cargo install --git https://github.com/astral-sh/uv uv
     ```
@@ -350,7 +348,7 @@ version and the dependencies needed to build the docs. Install it like so:
 
 To build the docs, run while inside the `jj` repository:
 
-```shell
+```shellsession
 uv run mkdocs serve
 ```
 
@@ -360,24 +358,24 @@ As you edit the `.md` files in `docs/`, the website should be rebuilt and
 reloaded in your browser automatically.
 
 !!! note "If the docs are not updating"
-    Check the terminal from which you ran `uv run mkdocs serve` for any build
-    errors or warnings. Warnings about `"GET /versions.json HTTP/1.1" code 404`
-    are expected and harmless.
+Check the terminal from which you ran `uv run mkdocs serve` for any build
+errors or warnings. Warnings about `"GET /versions.json HTTP/1.1" code 404`
+are expected and harmless.
 
 #### Offline distribution
 
 To build the rendered docs for offline distribution or to view them from your file
 system, run while inside the `jj` repository:
 
-```shell
+```shellsession
 MKDOCS_OFFLINE=true uv run mkdocs build
 ```
 
 ## Building the entire website
 
 !!! tip
-    Building the entire website is not usually necessary. If you are editing
-    documentation, the previous section is enough.
+Building the entire website is not usually necessary. If you are editing
+documentation, the previous section is enough.
 
     These instructions are relevant if you are working on the versioning of the
     documentation that we currently do with `mike`.
@@ -395,54 +393,54 @@ The different versions of documentation are managed and deployed with
 On a POSIX system or WSL, one way to build the entire website is as follows (on
 Windows, you'll need to understand and adapt the shell script):
 
-1. Check out `jj` as a co-located `jj + git` repository (`jj clone --colocate`),
-cloned from your fork of `jj` (e.g. `github.com/jjfan/jj`). You can also use a
-pure Git repo if you prefer.
+1.  Check out `jj` as a co-located `jj + git` repository (`jj clone --colocate`),
+    cloned from your fork of `jj` (e.g. `github.com/jjfan/jj`). You can also use a
+    pure Git repo if you prefer.
 
-2. Make sure `github.com/jjfan/jj` includes the `gh-pages` bookmark of the jj repo
-and run `git fetch origin gh-pages`.
+2.  Make sure `github.com/jjfan/jj` includes the `gh-pages` bookmark of the jj repo
+    and run `git fetch origin gh-pages`.
 
-3. Go to the GitHub repository settings, enable GitHub Pages, and configure them
-to use the `gh-pages` bookmark (this is usually the default).
+3.  Go to the GitHub repository settings, enable GitHub Pages, and configure them
+    to use the `gh-pages` bookmark (this is usually the default).
 
-4. Install `uv` as explained in [Previewing the HTML
-documentation](#previewing-the-html-documentation), and run the same `sh` script
-that is used in GitHub CI (details below):
+4.  Install `uv` as explained in [Previewing the HTML
+    documentation](#previewing-the-html-documentation), and run the same `sh` script
+    that is used in GitHub CI (details below):
 
-    ```shell
-    .github/scripts/docs-build-deploy prerelease main --push
-    ```
+        ```shellsession
+        .github/scripts/docs-build-deploy prerelease main --push
+        ```
 
-    This should build the version of the docs from the current commit,
-    deploy it as a new commit to the `gh-pages` bookmark,
-    and push the `gh-pages` bookmark to the origin.
+        This should build the version of the docs from the current commit,
+        deploy it as a new commit to the `gh-pages` bookmark,
+        and push the `gh-pages` bookmark to the origin.
 
-5. Now, you should be able to see the full website, including your latest changes
-to the `prerelease` version, at `https://jjfan.github.io/jj/prerelease/`.
+5.  Now, you should be able to see the full website, including your latest changes
+    to the `prerelease` version, at `https://jjfan.github.io/jj/prerelease/`.
 
-6. (Optional) The previous steps actually only rebuild
-`https://jjfan.github.io/jj/prerelease/` and its alias
-`https://jjfan.github.io/jj/main/`. If you'd like to test out version switching
-back and forth, you can also rebuild the docs for the latest release as follows.
+6.  (Optional) The previous steps actually only rebuild
+    `https://jjfan.github.io/jj/prerelease/` and its alias
+    `https://jjfan.github.io/jj/main/`. If you'd like to test out version switching
+    back and forth, you can also rebuild the docs for the latest release as follows.
 
-    ```shell
-    jj new v1.33.1  # Let's say `jj 1.33.1` is the currently the latest release
-    .github/scripts/docs-build-deploy v1.33.1 latest --push
-    ```
+        ```shellsession
+        jj new v1.33.1  # Let's say `jj 1.33.1` is the currently the latest release
+        .github/scripts/docs-build-deploy v1.33.1 latest --push
+        ```
 
-7. (Optional) When you are done, you may want to reset the `gh-pages` bookmark to the
-same spot as it is upstream. If you configured the "upstream" remote,
-this can be done with:
+7.  (Optional) When you are done, you may want to reset the `gh-pages` bookmark to the
+    same spot as it is upstream. If you configured the "upstream" remote,
+    this can be done with:
 
-    ```shell
-    # This will LOSE any changes you made to `gh-pages`
-    jj git fetch --remote upstream
-    jj bookmark set gh-pages -r gh-pages@upstream
-    jj git push --remote origin --bookmark gh-pages
-    ```
+        ```shellsession
+        # This will LOSE any changes you made to `gh-pages`
+        jj git fetch --remote upstream
+        jj bookmark set gh-pages -r gh-pages@upstream
+        jj git push --remote origin --bookmark gh-pages
+        ```
 
-    If you want to preserve some of the changes you made, you can do `jj bookmark
-    set my-changes -r gh-pages` BEFORE running the above commands.
+        If you want to preserve some of the changes you made, you can do `jj bookmark
+        set my-changes -r gh-pages` BEFORE running the above commands.
 
 ### Explanation of the `docs-build-deploy` script
 
@@ -463,28 +461,27 @@ served from. This bug should now be fixed, but if you are not serving the site
 from <https://jj-vcs.github.com/jj> and something fails weirdly, you might want
 to adjust the `site_url` to something like `https://jjfan.github.io/jj`.
 
-
 ## Modifying protobuffers (this is not common)
 
- Occasionally, you may need to change the `.proto` files that define jj's data
- storage format. In this case, you will need to add a few steps to the above
- workflow.
+Occasionally, you may need to change the `.proto` files that define jj's data
+storage format. In this case, you will need to add a few steps to the above
+workflow.
 
- - Install the `protoc` compiler. This usually means either `apt-get install
-   protobuf-compiler` or downloading [an official release]. The
-   `prost` [library docs] have additional advice.
- - Run `cargo run -p gen-protos` regularly (or after every edit to a `.proto`
-   file). This is the same as running `cargo run` from `lib/gen-protos`. The
-   `gen-protos` binary will use the `prost-build` library to compile the
-   `.proto` files into `.rs` files.
- - If you are adding a new `.proto` file, you will need to edit the list of
-   these files in `lib/gen-protos/src/main.rs`.
+- Install the `protoc` compiler. This usually means either `apt-get install
+protobuf-compiler` or downloading [an official release]. The
+  `prost` [library docs] have additional advice.
+- Run `cargo run -p gen-protos` regularly (or after every edit to a `.proto`
+  file). This is the same as running `cargo run` from `lib/gen-protos`. The
+  `gen-protos` binary will use the `prost-build` library to compile the
+  `.proto` files into `.rs` files.
+- If you are adding a new `.proto` file, you will need to edit the list of
+  these files in `lib/gen-protos/src/main.rs`.
 
 [an official release]: https://github.com/protocolbuffers/protobuf/releases
 [library docs]: https://docs.rs/prost-build/latest/prost_build/#sourcing-protoc
 
- The `.rs` files generated from `.proto` files are included in the repository,
- and there is a GitHub CI check that will complain if they do not match.
+The `.rs` files generated from `.proto` files are included in the repository,
+and there is a GitHub CI check that will complain if they do not match.
 
 ## Logging
 
@@ -500,16 +497,20 @@ turns on `debug` log level for `jj-lib` and `jj-cli` only.
 
 One easy-to-use sampling profiler
 is [samply](https://github.com/mstange/samply). For example:
-```shell
+
+```shellsession
 cargo install samply
 samply record jj diff
 ```
+
 Then just open the link it prints.
 
 Another option is to use the instrumentation we've added manually (using
 `tracing::instrument`) in various places. For example:
-```shell
+
+```shellsession
 JJ_TRACE=/tmp/trace.json jj diff
 ```
+
 Then go to `https://ui.perfetto.dev/` in Chrome and load `/tmp/trace.json` from
 there.

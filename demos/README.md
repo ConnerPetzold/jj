@@ -24,7 +24,7 @@ either Inkscape itself or some dependency of it.
 
 One way to make all the images and check the output is:
 
-```shell
+```shellsession
 cd demos
 ./run_scripts.sh demo_*.sh |less
 ```

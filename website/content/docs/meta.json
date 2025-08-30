@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "defaultOpen": true,
+  "pages": [
+    "---Getting started---",
+    "...getting-started",
+    "---Reference---",
+    "...reference"
+  ]
+}

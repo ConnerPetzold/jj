@@ -1,6 +1,5 @@
 # Installation and setup
 
-
 ## Installation
 
 ### Download pre-built binaries for a release
@@ -13,7 +12,7 @@ Windows, Mac, or Linux (the "musl" version should work on all distributions).
 If you use [`cargo-binstall`][cargo-binstall], you
 can install binaries of the latest `jj` release from GitHub as follows:
 
-```shell
+```shellsession
 # Will put the jj binary for the latest release in ~/.cargo/bin by default
 cargo binstall --strategies crate-meta-data jj-cli
 ```
@@ -33,34 +32,35 @@ be compiled from the same source code.
 First make sure that you have a Rust version >= 1.85 and that the
 `build-essential` package is installed by running something like this:
 
-```shell
+```shellsession
 sudo apt-get install build-essential
 ```
 
 Now run either:
 
-```shell
+```shellsession
 # To install the *prerelease* version from the main branch
 cargo install --git https://github.com/jj-vcs/jj.git --locked --bin jj jj-cli
 ```
 
 or:
 
-```shell
+```shellsession
 # To install the latest release
 cargo install --locked --bin jj jj-cli
 ```
 
 #### Arch Linux
+
 You can install the `jujutsu` package from the [official extra repository](https://archlinux.org/packages/extra/x86_64/jujutsu/):
 
-```shell
+```shellsession
 pacman -S jujutsu
 ```
 
 Or install from the [AUR repository](https://aur.archlinux.org/packages/jujutsu-git) with an [AUR Helper](https://wiki.archlinux.org/title/AUR_helpers):
 
-```shell
+```shellsession
 yay -S jujutsu-git
 ```
 
@@ -72,14 +72,14 @@ If you're on NixOS you can install a **released** version of `jj` using the
 To install a **prerelease** version, you can use the flake for this repository.
 For example, if you want to run `jj` loaded from the flake, use:
 
-```shell
+```shellsession
 nix run 'github:jj-vcs/jj'
 ```
 
 You can also add this flake url to your system input flakes. Or you can
 install the flake to your user profile:
 
-```shell
+```shellsession
 # Installs the prerelease version from the main branch
 nix profile install 'github:jj-vcs/jj'
 ```
@@ -88,7 +88,7 @@ nix profile install 'github:jj-vcs/jj'
 
 If you use Homebrew, you can run:
 
-```shell
+```shellsession
 # Installs the latest release
 brew install jj
 ```
@@ -100,7 +100,7 @@ Details on how to enable the GURU repository can be found [here](https://wiki.ge
 
 Once you have synced the GURU repository, you can install `dev-vcs/jj` via Portage:
 
-```shell
+```shellsession
 emerge -av dev-vcs/jj
 ```
 
@@ -108,7 +108,7 @@ emerge -av dev-vcs/jj
 
 `jujutsu` can be installed from the official [openSUSE-Tumbleweed-Oss](http://download.opensuse.org/tumbleweed/repo/oss/) repository:
 
-```shell
+```shellsession
 zypper install jujutsu
 ```
 
@@ -118,13 +118,13 @@ zypper install jujutsu
 
 First make sure that you have a Rust version >= 1.85. You may also need to run:
 
-```shell
+```shellsession
 xcode-select --install
 ```
 
 Now run either:
 
-```shell
+```shellsession
 # To install the *prerelease* version from the main branch
 cargo install --git https://github.com/jj-vcs/jj.git \
      --locked --bin jj jj-cli
@@ -132,7 +132,7 @@ cargo install --git https://github.com/jj-vcs/jj.git \
 
 or:
 
-```shell
+```shellsession
 # To install the latest release
 cargo install --locked --bin jj jj-cli
 ```
@@ -141,7 +141,7 @@ cargo install --locked --bin jj jj-cli
 
 If you use Homebrew, you can run:
 
-```shell
+```shellsession
 # Installs the latest release
 brew install jj
 ```
@@ -151,7 +151,7 @@ brew install jj
 You can also install `jj` via [the MacPorts `jujutsu`
 port][macports]:
 
-```shell
+```shellsession
 # Installs the latest release
 sudo port install jujutsu
 ```
@@ -160,38 +160,37 @@ sudo port install jujutsu
 
 First make sure that you have a Rust version >= 1.85. Now run either:
 
-```shell
+```shellsession
 # To install the *prerelease* version from the main branch
 cargo install --git https://github.com/jj-vcs/jj.git --locked --bin jj jj-cli
 ```
 
 or:
 
-```shell
+```shellsession
 # To install the latest release
 cargo install --locked --bin jj jj-cli
 ```
 
 via winget:
 
-```shell
+```shellsession
 # To install the latest release via winget
 winget install jj-vcs.jj
 ```
 
 via scoop:
 
-```shell
+```shellsession
 # To install the latest release via scoop
 scoop install main/jj
 ```
-
 
 ## Initial configuration
 
 You may want to configure your name and email so commits are made in your name.
 
-```shell
+```shellsession
 $ jj config set --user user.name "Martin von Zweigbergk"
 $ jj config set --user user.email "martinvonz@google.com"
 ```
@@ -223,13 +222,13 @@ transition once we default to these new completions.
 
 === "Standard"
 
-    ```shell
+    ```shellsession
     source <(jj util completion bash)
     ```
 
 === "Dynamic"
 
-    ```shell
+    ```shellsession
     source <(COMPLETE=bash jj)
     ```
 
@@ -237,7 +236,7 @@ transition once we default to these new completions.
 
 === "Standard"
 
-    ```shell
+    ```shellsession
     autoload -U compinit
     compinit
     source <(jj util completion zsh)
@@ -245,7 +244,7 @@ transition once we default to these new completions.
 
 === "Dynamic"
 
-    ```shell
+    ```shellsession
     source <(COMPLETE=zsh jj)
     ```
 
@@ -257,13 +256,13 @@ transition once we default to these new completions.
 
 === "Standard"
 
-    ```shell
+    ```shellsession
     jj util completion fish | source
     ```
 
 === "Dynamic"
 
-    ```shell
+    ```shellsession
     COMPLETE=fish jj | source
     ```
 
@@ -280,7 +279,7 @@ transition once we default to these new completions.
 
 === "Standard"
 
-    ```shell
+    ```shellsession
     source-bash $(jj util completion)
     ```
 
@@ -291,7 +290,7 @@ transition once we default to these new completions.
     Insert this line in your `$PROFILE` file
     (usually `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`):
 
-    ```shell
+    ```shellsession
     Invoke-Expression (& { (jj util completion power-shell | Out-String) })
     ```
 

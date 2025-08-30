@@ -2779,7 +2779,7 @@ Apply it by running one of these:
     use "completions-jj.nu" *  # Or `source "completions-jj.nu"`
     ```
 - Zsh:
-    ```shell
+    ```shellsession
     autoload -U compinit
     compinit
     source <(jj util completion zsh)

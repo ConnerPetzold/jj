@@ -1,0 +1,17 @@
+---
+title: jj workspace forget
+isCommand: true
+---
+
+Stop tracking a workspace's working-copy commit in the repo
+
+The workspace will not be touched on disk. It can be deleted from disk before or after running this command.
+
+```shell title="Usage"
+jj workspace forget [WORKSPACES]...
+```
+
+### Arguments
+
+- `<WORKSPACES>` — Names of the workspaces to forget. By default, forgets only the current workspace
+

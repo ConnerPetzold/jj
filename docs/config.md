@@ -2,7 +2,6 @@
 
 These are the config settings available to jj/Jujutsu.
 
-
 ## Config files and TOML
 
 `jj` loads several types of config settings:
@@ -11,11 +10,11 @@ These are the config settings available to jj/Jujutsu.
   `cli/src/config/` directory in `jj`'s source repo.
 
 - The user settings. These can be edited with `jj config edit --user`. User
-settings are located in [the user config files], which can be found with `jj
+  settings are located in [the user config files], which can be found with `jj
 config path --user`.
 
 - The repo settings. These can be edited with `jj config edit --repo` and are
-located in `.jj/repo/config.toml`.
+  located in `.jj/repo/config.toml`.
 
 - Settings [specified in the command-line](#specifying-config-on-the-command-line).
 
@@ -39,6 +38,7 @@ The first thing to remember is that the value of a setting (the part to the
 right of the `=` sign) should be surrounded in quotes if it's a string.
 
 ### Dotted style and headings
+
 In TOML, anything under a heading can be dotted instead. For example,
 `user.name = "YOUR NAME"` is equivalent to:
 
@@ -69,7 +69,6 @@ then use whichever suits you in your config. If you mix dotted keys and headings
 
 That's probably enough TOML to keep you out of trouble but the [syntax guide] is
 very short if you ever need to check.
-
 
 ## User settings
 
@@ -107,15 +106,15 @@ commit_id = "green"
 
 The following colors are available:
 
-* black
-* red
-* green
-* yellow
-* blue
-* magenta
-* cyan
-* white
-* default
+- black
+- red
+- green
+- yellow
+- blue
+- magenta
+- cyan
+- white
+- default
 
 All of them but "default" come in a bright version too, e.g. "bright red". The
 "default" color can be used to override a color defined by a parent style
@@ -201,6 +200,7 @@ concat(
 ```
 
 You can override only the `default_commit_description` value if you like, e.g.:
+
 ```toml
 [template-aliases]
 default_commit_description = '''
@@ -271,9 +271,10 @@ format_signed_off_by_trailer(self)
 ```
 
 Some ready-to-use trailer templates are available for frequently used trailers:
-* `format_signed_off_by_trailer(commit)` creates a "Signed-off-by" trailer
+
+- `format_signed_off_by_trailer(commit)` creates a "Signed-off-by" trailer
   using the committer info.
-* `format_gerrit_change_id_trailer(commit)` creates a "Change-Id" trailer
+- `format_gerrit_change_id_trailer(commit)` creates a "Change-Id" trailer
   suitable to be used with Gerrit. It is based Jujutsu's change id.
 
 Existing trailers are also accessible via `commit.trailers()`.
@@ -309,28 +310,28 @@ it's difficult to read a diff line with many removed/added words, there's a
 threshold to switch to traditional separate-line format. You can also change
 the default number of lines of context shown.
 
-* `max-inline-alternation`: Maximum number of removed/added word alternation to
+- `max-inline-alternation`: Maximum number of removed/added word alternation to
   inline. For example, `<added> ... <added>` sequence has 1 alternation, so the
   line will be inline if `max-inline-alternation >= 1`. `<added> ... <removed>
-  ... <added>` sequence has 3 alternation.
+... <added>` sequence has 3 alternation.
 
-  * `0`: disable inlining, making `--color-words` more similar to `--git`
-  * `1`: inline removes-only or adds-only lines
-  * `2`, `3`, ..: inline up to `2`, `3`, .. alternation
-  * `-1`: inline all lines
+  - `0`: disable inlining, making `--color-words` more similar to `--git`
+  - `1`: inline removes-only or adds-only lines
+  - `2`, `3`, ..: inline up to `2`, `3`, .. alternation
+  - `-1`: inline all lines
 
   The default is `3`.
 
   **This parameter is experimental.** The definition is subject to change.
 
-* `conflict`: How conflicts are processed and displayed.
+- `conflict`: How conflicts are processed and displayed.
 
-   * `"materialize"`: compare materialized contents (default)
-   * `"pair"`: compare individual pairs
+  - `"materialize"`: compare materialized contents (default)
+  - `"pair"`: compare individual pairs
 
-   **This parameter is experimental.**
+  **This parameter is experimental.**
 
-* `context`: Number of lines of context to show in the diff. The default is `3`.
+- `context`: Number of lines of context to show in the diff. The default is `3`.
 
 ```toml
 [diff.color-words]
@@ -342,7 +343,7 @@ context = 3
 
 In git diffs you can change the default number of lines of context shown.
 
-* `context`: Number of lines of context to show in the diff. The default is `3`.
+- `context`: Number of lines of context to show in the diff. The default is `3`.
 
 ```toml
 [diff.git]
@@ -381,7 +382,7 @@ diff-args = ["--color=always", "$left", "$right"]
   not work for viewing diffs.
 
 By default `jj` will invoke external tools with a directory containing the left
-and right sides.  The `diff-invocation-mode` config can change this to file by file
+and right sides. The `diff-invocation-mode` config can change this to file by file
 invocations as follows:
 
 ```toml
@@ -491,7 +492,6 @@ you can add this to your config:
 config_list = "builtin_config_list_detailed"
 ```
 
-
 ## Log
 
 ### Default revisions
@@ -570,6 +570,7 @@ templates.
 - `templates.op_log_node` for operations (with `Operation` keywords)
 
 For example:
+
 ```toml
 [templates]
 log_node = '''
@@ -724,7 +725,7 @@ pager](#builtin-pager).
 If you are using a standard Linux distro, your system likely already has
 `$PAGER` set and that will be preferred over the built-in. To use the built-in:
 
-```shell
+```shellsession
 jj config set --user ui.pager :builtin
 ```
 
@@ -765,7 +766,7 @@ The built-in pager does not support mouse input.
 
 #### Wrapping config
 
-Wrapping performed by the pager happens *in addition to* any
+Wrapping performed by the pager happens _in addition to_ any
 wrapping that `jj` itself does.
 
 ```toml
@@ -804,7 +805,6 @@ show-ruler = true # (default)
 # Start with the ruler hidden
 show-ruler = false
 ```
-
 
 ### Processing contents to be paged
 
@@ -918,7 +918,7 @@ Obviously, you would only set one line, don't copy them all in!
 ## Editing diffs
 
 The `ui.diff-editor` setting affects the default tool used for editing diffs
-(e.g.  `jj split`, `jj squash -i`). If it is not set, the special value
+(e.g. `jj split`, `jj squash -i`). If it is not set, the special value
 `:builtin` is used. It launches a built-in TUI tool (known as [scm-diff-editor])
 to edit the diff in your terminal.
 
@@ -971,7 +971,6 @@ diff-editor = ["/path/to/binary", "--be-helpful", "$left", "$right"]
 diff-editor = "binary"
 ```
 
-
 ### Experimental 3-pane diff editing
 
 We offer two special "3-pane" diff editor configs:
@@ -997,7 +996,7 @@ over SSH. Open the fold below for more details of how to set that up.
 To use `diffedit3` over SSH, you need to set up port forwarding. One way to do
 this is to start SSH as follows (copy-paste the relevant lines):
 
-```shell
+```shellsession
 ssh -L 17376:localhost:17376 \
     -L 17377:localhost:17377 \
     -L 17378:localhost:17378 \
@@ -1026,7 +1025,6 @@ Host myhost
 With that configuration, you should be able to simply `ssh myhost`.
 
 </details>
-
 
 Setting either `ui.diff-editor = "meld-3"` or `ui.diff-editor = "diffedit3"`
 will result in the diff editor showing 3 panes: the diff on the left and right,
@@ -1079,7 +1077,6 @@ experience, you can follow [instructions from the Wiki] to configure the
 [DirDiff Vim plugin] and/or the [vimtabdiff Python script].
 
 [instructions from the Wiki]: https://github.com/jj-vcs/jj/wiki/Vim#using-vim-as-a-diff-tool
-
 [DirDiff Vim plugin]: https://github.com/will133/vim-dirdiff
 [vimtabdiff Python script]: https://github.com/balki/vimtabdiff
 
@@ -1097,6 +1094,7 @@ merge-editor = ["meld", "$left", "$base", "$right", "-o", "$output"]
 ```
 
 The following tools can be used out of the box, as long as they are installed:
+
 - "kdiff3"
 - "meld"
 - "mergiraf"
@@ -1279,7 +1277,7 @@ patterns = ["glob:'**/*.rs'"]
 
 Then to use the tool in a specific repository, set the `enabled` config:
 
-```shell
+```shellsession
 $ jj config set --repo fix.tools.rustfmt.enabled true
 ```
 
@@ -1517,7 +1515,7 @@ auto-local-bookmark = true
 This setting is applied only to new remote bookmarks. Existing remote bookmarks
 can be tracked individually by using `jj bookmark track`/`untrack` commands.
 
-```shell
+```shellsession
 # import feature1 bookmark and start tracking it
 jj bookmark track feature1@origin
 # delete local gh-pages bookmark and stop tracking it
@@ -1702,10 +1700,13 @@ eol-conversion = "input-output"
 ```
 
 [git-autocrlf]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf
-[^1]: To detect if a file is binary, Jujutsu currently checks if there is NULL
-      byte in the file which is different from the algorithm of
-      [`gitoxide`][gitoxide-is-binary] or [`git`][git-is-binary]. Jujutsu
-      doesn't plan to align the binary detection logic with git.
+
+[^1]:
+    To detect if a file is binary, Jujutsu currently checks if there is NULL
+    byte in the file which is different from the algorithm of
+    [`gitoxide`][gitoxide-is-binary] or [`git`][git-is-binary]. Jujutsu
+    doesn't plan to align the binary detection logic with git.
+
 [gitoxide-is-binary]: https://github.com/GitoxideLabs/gitoxide/blob/073487b38ed40bcd7eb45dc110ae1ce84f9275a9/gix-filter/src/eol/utils.rs#L98-L100
 [git-is-binary]: https://github.com/git/git/blob/f1ca98f609f9a730b9accf24e5558a10a0b41b6c/convert.c#L94-L103
 
@@ -1735,10 +1736,10 @@ The files in the `conf.d` directory are loaded in lexicographic order. This allo
 configs to be split across multiple files and combines well
 with [Conditional Variables](#conditional-variables).
 
-| Platform        | Location of `<PLATFORM_SPECIFIC>` dir | Example config file location                              |
-| :-------------- | :------------------------------------ | :-------------------------------------------------------- |
-| Linux and macOS | `$XDG_CONFIG_HOME` or `$HOME/.config` | `/home/alice/.config/jj/config.toml`                      |
-| Windows         | `{FOLDERID_RoamingAppData}`           | `C:\Users\Alice\AppData\Roaming\jj\config.toml`           |
+| Platform        | Location of `<PLATFORM_SPECIFIC>` dir | Example config file location                    |
+| :-------------- | :------------------------------------ | :---------------------------------------------- |
+| Linux and macOS | `$XDG_CONFIG_HOME` or `$HOME/.config` | `/home/alice/.config/jj/config.toml`            |
+| Windows         | `{FOLDERID_RoamingAppData}`           | `C:\Users\Alice\AppData\Roaming\jj\config.toml` |
 
 On macOS, jj used to put the user config in `~/Library/Application Support`,
 and jj will still look there for backwards compatibility purposes; this is
@@ -1779,20 +1780,24 @@ This enables features like:
 Here are some popular editors with TOML schema validation support:
 
 - VS Code
-    - Install [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
+
+  - Install [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
 
 - Neovim/Vim
-    - Use with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [taplo](https://github.com/tamasfe/taplo)
+
+  - Use with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [taplo](https://github.com/tamasfe/taplo)
 
 - Helix
-    - Install [taplo](https://github.com/tamasfe/taplo)
+
+  - Install [taplo](https://github.com/tamasfe/taplo)
 
 - JetBrains IDEs (IntelliJ, PyCharm, etc)
-    - Install [TOML](https://plugins.jetbrains.com/plugin/8195-toml) plugin
+
+  - Install [TOML](https://plugins.jetbrains.com/plugin/8195-toml) plugin
 
 - Emacs
-    - Install [lsp-mode](https://github.com/emacs-lsp/lsp-mode) and [toml-mode](https://github.com/dryman/toml-mode.el)
-    - Configure [taplo](https://github.com/tamasfe/taplo) as the LSP server
+  - Install [lsp-mode](https://github.com/emacs-lsp/lsp-mode) and [toml-mode](https://github.com/dryman/toml-mode.el)
+  - Configure [taplo](https://github.com/tamasfe/taplo) as the LSP server
 
 ### Specifying config on the command-line
 
@@ -1800,7 +1805,7 @@ You can use one or more `--config`/`--config-file` options on the command line
 to specify additional configuration settings. This overrides settings defined in
 config files or environment variables. For example,
 
-```shell
+```shellsession
 # Must not have spaces around the `=`
 jj --config ui.color=always --config ui.diff-editor=meld split
 ```
@@ -1809,7 +1814,7 @@ Config value should be specified as a TOML expression. If string value isn't
 enclosed by any TOML constructs (such as array notation), quotes can be omitted.
 Here is an example with more advanced TOML constructs:
 
-```shell
+```shellsession
 # Single quotes and the '\' are interpreted by the shell and assume a Unix shell
 # Double quotes are passed to jj and are parsed as TOML syntax
 jj log --config \
@@ -1818,7 +1823,7 @@ jj log --config \
 
 To load an entire TOML document, use `--config-file`:
 
-```shell
+```shellsession
 jj --config-file=extra-config.toml log
 ```
 
@@ -1885,7 +1890,7 @@ wip = ["log", "-r", "work"]
 
 #### Available condition keys
 
-* `--when.repositories`: List of paths to match the repository path prefix.
+- `--when.repositories`: List of paths to match the repository path prefix.
 
   Paths should be absolute. Each path component (directory or file name, drive
   letter, etc.) is compared case-sensitively on all platforms. A path starting
@@ -1894,10 +1899,9 @@ wip = ["log", "-r", "work"]
 
   Use `jj root` to see the workspace root directory. Note that the repository path
   is in the main workspace if you're using multiple workspaces with `jj
-  workspace`.
+workspace`.
 
-
-* `--when.commands`: List of subcommands to match.
+- `--when.commands`: List of subcommands to match.
 
   Subcommands are space-separated and matched by prefix.
 

@@ -19,6 +19,7 @@ use clap::builder::PossibleValue;
 use clap::builder::StyledStr;
 use crossterm::style::Stylize as _;
 use itertools::Itertools as _;
+use termimad::MadSkin;
 use tracing::instrument;
 
 use crate::cli_util::CommandHelper;
@@ -100,6 +101,11 @@ struct Keyword {
 // Maybe we can steal some ideas from https://github.com/jj-vcs/jj/pull/3130
 const KEYWORDS: &[Keyword] = &[
     Keyword {
+        name: "about",
+        description: "About Jujutsu",
+        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "index.md")),
+    },
+    Keyword {
         name: "bookmarks",
         description: "Named pointers to revisions (similar to Git's branches)",
         content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "bookmarks.md")),
@@ -132,7 +138,7 @@ const KEYWORDS: &[Keyword] = &[
     Keyword {
         name: "tutorial",
         description: "Show a tutorial to get started with jj",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "tutorial.md")),
+        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "tutorial.mdx")),
     },
 ];
 

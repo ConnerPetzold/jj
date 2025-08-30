@@ -263,7 +263,6 @@ use crate::ui::Ui;
 /// J           J
 /// ```
 #[derive(clap::Args, Clone, Debug)]
-#[command(verbatim_doc_comment)]
 #[command(group(ArgGroup::new("to_rebase").args(&["branch", "source", "revisions"])))]
 pub(crate) struct RebaseArgs {
     /// Rebase the whole branch relative to destination's ancestors (can be

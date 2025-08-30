@@ -1,0 +1,58 @@
+---
+title: jj bookmark list
+isCommand: true
+---
+
+List bookmarks and their targets
+
+By default, a tracking remote bookmark will be included only if its target is different from the local target. A non-tracking remote bookmark won't be listed. For a conflicted bookmark (both local and remote), old target revisions are preceded by a "-" and new target revisions are preceded by a "+".
+
+See [`jj help -k bookmarks`] for more information.
+
+[`jj help -k bookmarks`]: https://jj-vcs.github.io/jj/latest/bookmarks
+
+```shell title="Usage"
+jj bookmark list [OPTIONS] [NAMES]...
+```
+
+**Command Alias:** `l`
+
+### Arguments
+
+- `<NAMES>` — Show bookmarks whose local name matches
+
+  By default, the specified name matches exactly. Use `glob:` prefix to select bookmarks by [wildcard pattern].
+
+  [wildcard pattern]: https://jj-vcs.github.io/jj/latest/revsets/#string-patterns
+
+### Options
+
+- `-a`, `--all-remotes` — Show all tracking and non-tracking remote bookmarks including the ones whose targets are synchronized with the local bookmarks
+- `--remote <REMOTE>` — Show all tracking and non-tracking remote bookmarks belonging to this remote
+
+  Can be combined with `--tracked` or `--conflicted` to filter the bookmarks shown (can be repeated.)
+
+  By default, the specified remote name matches exactly. Use `glob:` prefix to select remotes by [wildcard pattern].
+
+  [wildcard pattern]: https://jj-vcs.github.io/jj/latest/revsets/#string-patterns
+- `-t`, `--tracked` — Show remote tracked bookmarks only. Omits local Git-tracking bookmarks by default
+- `-c`, `--conflicted` — Show conflicted bookmarks only
+- `-r`, `--revisions <REVSETS>` — Show bookmarks whose local targets are in the given revisions
+
+  Note that `-r deleted_bookmark` will not work since `deleted_bookmark` wouldn't have a local target.
+- `-T`, `--template <TEMPLATE>` — Render each bookmark using the given template
+
+  All 0-argument methods of the [`CommitRef` type] are available as keywords in the template expression. See [`jj help -k templates`] for more information.
+
+  [`CommitRef` type]: https://jj-vcs.github.io/jj/latest/templates/#commitref-type
+
+  [`jj help -k templates`]: https://jj-vcs.github.io/jj/latest/templates/
+- `--sort <SORT_KEY>` — Sort bookmarks based on the given key (or multiple keys)
+
+  Suffix the key with `-` to sort in descending order of the value (e.g. `--sort name-`). Note that when using multiple keys, the first key is the most significant.
+
+  This defaults to the `ui.bookmark-list-sort-keys` setting.
+
+  Possible values: `name`, `name-`, `author-name`, `author-name-`, `author-email`, `author-email-`, `author-date`, `author-date-`, `committer-name`, `committer-name-`, `committer-email`, `committer-email-`, `committer-date`, `committer-date-`
+
+

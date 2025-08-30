@@ -13,7 +13,7 @@ naming a bookmark.
 
 In this example we're letting Jujutsu auto-create a bookmark.
 
-```shell
+```shellsession
 # Start a new commit off of the default bookmark.
 $ jj new main
 # Refactor some files, then add a description and start a new commit
@@ -30,7 +30,7 @@ $ jj git push -c @-
 
 In this example, we create a bookmark named `bar` and then push it to the remote.
 
-```shell
+```shellsession
 # Start a new commit off of the default bookmark.
 $ jj new main
 # Refactor some files, then add a description and start a new commit
@@ -67,7 +67,7 @@ In a co-located repository, every `jj` command will automatically synchronize
 Jujutsu's view of the repo with Git's view. For example, `jj commit` updates the
 HEAD of the Git repository, enabling an incremental migration.
 
-```shell
+```shellsession
 $ nvim docs/tutorial.md
 $ # Do some more work.
 $ jj commit -m "Update tutorial"
@@ -82,7 +82,7 @@ In a Jujutsu repository, the workflow is simplified. If there's no need for
 explicitly named bookmarks, you can just generate one for a change. As Jujutsu is
 able to create a bookmark for a revision.
 
-```shell
+```shellsession
 $ # Do your work
 $ jj commit
 $ # Push change "mw", letting Jujutsu automatically create a bookmark called
@@ -103,7 +103,7 @@ force-pushing[^2].
 If your project prefers that you address review comments by adding commits on
 top, you can do that by doing something like this:
 
-```shell
+```shellsession
 $ # Create a new commit on top of the `your-feature` bookmark from above.
 $ jj new your-feature
 $ # Address the comments by updating the code. Then review the changes.
@@ -124,7 +124,7 @@ achieved without creating a new commit.
     We strongly suggest to `jj new` after the example below, as all further edits
     still get amended to the previous commit.
 
-```shell
+```shellsession
 $ # Create a new commit on top of the `your-feature` bookmark from above.
 $ jj new your-feature
 $ # Address the comments by updating the code. Then review the changes.
@@ -142,7 +142,7 @@ $ jj git push
 If your project prefers that you keep commits clean, you can do that by doing
 something like this:
 
-```shell
+```shellsession
 $ # Create a new commit on top of the second-to-last commit in `your-feature`,
 $ # as reviewers requested a fix there.
 $ jj new your-feature- # NOTE: the trailing hyphen is not a typo!
@@ -178,7 +178,7 @@ that aren't [co-located](./git-compatibility.md#co-located-jujutsugit-repos)
 (see [issue #1008]). You can configure the `$GIT_DIR` environment variable to
 point it to the right path:
 
-```shell
+```shellsession
 $ GIT_DIR=.jj/repo/store/git gh issue list
 ```
 
@@ -186,7 +186,7 @@ You can make that automatic by installing [direnv](https://direnv.net) and
 defining hooks in a `.envrc` file in the repository root to configure `$GIT_DIR`.
 Just add this line into `.envrc`:
 
-```shell
+```shellsession
 export GIT_DIR=$PWD/.jj/repo/store/git
 ```
 
@@ -201,26 +201,26 @@ commands like `gh issue list` normally.
 Log all revisions across all local bookmarks that aren't on the main bookmark nor
 on any remote:
 
-```shell
+```shellsession
 $ jj log -r 'bookmarks() & ~(main | remote_bookmarks())'
 ```
 
 Log all revisions that you authored, across all bookmarks that aren't on any
 remote:
 
-```shell
+```shellsession
 $ jj log -r 'mine() & bookmarks() & ~remote_bookmarks()'
 ```
 
 Log all remote bookmarks that you authored or committed to:
 
-```shell
+```shellsession
 $ jj log -r 'remote_bookmarks() & (mine() | committer(your@email.com))'
 ```
 
 Log all ancestors of the current working copy that aren't on any remote:
 
-```shell
+```shellsession
 $ jj log -r 'remote_bookmarks()..@'
 ```
 
@@ -250,7 +250,7 @@ For example, "upstream" can designate the remote where the changes will be
 merged through a pull-request while "origin" is your private fork of the
 project.
 
-```shell
+```shellsession
 $ jj git clone --remote upstream https://github.com/upstream-org/repo
 $ cd repo
 $ jj git remote add origin git@github.com:your-org/your-repo-fork

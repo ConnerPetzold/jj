@@ -1,0 +1,66 @@
+---
+title: jj log
+isCommand: true
+---
+
+Show revision history
+
+Renders a graphical view of the project's history, ordered with children before parents. By default, the output only includes mutable revisions, along with some additional revisions for context. Use `jj log -r ::` to see all revisions. See [`jj help -k revsets`] for information about the syntax.
+
+[`jj help -k revsets`]: https://jj-vcs.github.io/jj/latest/revsets/
+
+Spans of revisions that are not included in the graph per `--revisions` are rendered as a synthetic node labeled "(elided revisions)".
+
+The working-copy commit is indicated by a `@` symbol in the graph. [Immutable revisions] have a `◆` symbol. Other commits have a `○` symbol. All of these symbols can be [customized].
+
+[Immutable revisions]: https://jj-vcs.github.io/jj/latest/config/#set-of-immutable-commits
+
+[customized]: https://jj-vcs.github.io/jj/latest/config/#node-style
+
+```shell title="Usage"
+jj log [OPTIONS] [FILESETS]...
+```
+
+### Arguments
+
+- `<FILESETS>` — Show revisions modifying the given paths
+
+### Options
+
+- `-r`, `--revisions <REVSETS>` — Which revisions to show
+
+  If no paths nor revisions are specified, this defaults to the `revsets.log` setting.
+- `-n`, `--limit <LIMIT>` — Limit number of revisions to show
+
+  Applied after revisions are filtered and reordered topologically, but before being reversed.
+- `--reversed` — Show revisions in the opposite order (older revisions first)
+- `--no-graph` — Don't show the graph, show a flat list of revisions
+- `-T`, `--template <TEMPLATE>` — Render each revision using the given template
+
+  Run `jj log -T` to list the built-in templates.
+
+  You can also specify arbitrary template expressions using the [built-in keywords]. See [`jj help -k templates`] for more information.
+
+  If not specified, this defaults to the `templates.log` setting.
+
+  [built-in keywords]: https://jj-vcs.github.io/jj/latest/templates/#commit-keywords
+
+  [`jj help -k templates`]: https://jj-vcs.github.io/jj/latest/templates/
+- `-p`, `--patch` — Show patch
+- `-s`, `--summary` — For each path, show only whether it was modified, added, or deleted
+- `--stat` — Show a histogram of the changes
+- `--types` — For each path, show only its type before and after
+
+  The diff is shown as two letters. The first letter indicates the type before and the second letter indicates the type after. '-' indicates that the path was not present, 'F' represents a regular file, `L' represents a symlink, 'C' represents a conflict, and 'G' represents a Git submodule.
+- `--name-only` — For each path, show only its path
+
+  Typically useful for shell commands like: `jj diff -r @- --name-only | xargs perl -pi -e's/OLD/NEW/g`
+- `--git` — Show a Git-format diff
+- `--color-words` — Show a word-level diff with changes indicated only by color
+- `--tool <TOOL>` — Generate diff by external command
+
+  A builtin format can also be specified as `:<name>`. For example, `--tool=:git` is equivalent to `--git`.
+- `--context <CONTEXT>` — Number of lines of context to show
+- `--ignore-all-space` — Ignore whitespace when comparing lines
+- `--ignore-space-change` — Ignore changes in amount of whitespace when comparing lines
+

@@ -1,0 +1,21 @@
+---
+title: jj util gc
+isCommand: true
+---
+
+Run backend-dependent garbage collection.
+
+To garbage-collect old operations and the commits/objects referenced by them, run `jj op abandon ..<some old operation>` before `jj util gc`.
+
+```shell title="Usage"
+jj util gc [OPTIONS]
+```
+
+### Options
+
+- `--expire <EXPIRE>` — Time threshold
+
+  By default, only obsolete objects and operations older than 2 weeks are pruned.
+
+  Only the string "now" can be passed to this parameter. Support for arbitrary absolute and relative timestamps will come in a subsequent release.
+

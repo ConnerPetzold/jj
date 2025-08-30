@@ -12,14 +12,14 @@ names passed to these commands [must be quoted][string-literals] if they contain
 whitespace or meta characters. However, as a special case, quotes can be omitted
 if the expression has no operators nor function calls. For example:
 
-* `jj diff 'Foo Bar'` (shell quotes are required, but inner quotes are optional)
-* `jj diff '~"Foo Bar"'` (both shell and inner quotes are required)
-* `jj diff '"Foo(1)"'` (both shell and inner quotes are required)
+- `jj diff 'Foo Bar'` (shell quotes are required, but inner quotes are optional)
+- `jj diff '~"Foo Bar"'` (both shell and inner quotes are required)
+- `jj diff '"Foo(1)"'` (both shell and inner quotes are required)
 
 Glob characters aren't considered meta characters, but shell quotes are still
 required:
 
-* `jj diff '~glob:**/*.rs'`
+- `jj diff '~glob:**/*.rs'`
 
 [string-literals]: templates.md#string-literals
 
@@ -29,21 +29,21 @@ The following patterns are supported. In all cases, we do not mention any shell
 quoting that might be necessary, and the quotes around `"path"` are optional if
 the path [has no special characters](#quoting-file-names).
 
-* `"path"` or `cwd:"path"`: Matches cwd-relative path prefix (file or files
+- `"path"` or `cwd:"path"`: Matches cwd-relative path prefix (file or files
   under directory recursively.)
-* `file:"path"` or `cwd-file:"path"`: Matches cwd-relative file (or exact) path.
-* `glob:"pattern"` or `cwd-glob:"pattern"`: Matches file paths with cwd-relative
+- `file:"path"` or `cwd-file:"path"`: Matches cwd-relative file (or exact) path.
+- `glob:"pattern"` or `cwd-glob:"pattern"`: Matches file paths with cwd-relative
   Unix-style shell [wildcard `pattern`][glob]. For example, `glob:"*.c"` will
   match all `.c` files in the current working directory non-recursively.
-* `glob-i:"pattern"` or `cwd-glob-i:"pattern"`: Like `glob:` but
+- `glob-i:"pattern"` or `cwd-glob-i:"pattern"`: Like `glob:` but
   case-insensitive. For example, `glob-i:"*.TXT"` will match both `file.txt`
   and `FILE.TXT`.
-* `root:"path"`: Matches workspace-relative path prefix (file or files under
+- `root:"path"`: Matches workspace-relative path prefix (file or files under
   directory recursively.)
-* `root-file:"path"`: Matches workspace-relative file (or exact) path.
-* `root-glob:"pattern"`: Matches file paths with workspace-relative Unix-style
+- `root-file:"path"`: Matches workspace-relative file (or exact) path.
+- `root-glob:"pattern"`: Matches file paths with workspace-relative Unix-style
   shell [wildcard `pattern`][glob].
-* `root-glob-i:"pattern"`: Like `root-glob:` but case-insensitive.
+- `root-glob-i:"pattern"`: Like `root-glob:` but case-insensitive.
 
 [glob]: https://docs.rs/globset/latest/globset/#syntax
 
@@ -52,10 +52,10 @@ the path [has no special characters](#quoting-file-names).
 The following operators are supported. `x` and `y` below can be any fileset
 expressions.
 
-* `~x`: Matches everything but `x`.
-* `x & y`: Matches both `x` and `y`.
-* `x ~ y`: Matches `x` but not `y`.
-* `x | y`: Matches either `x` or `y` (or both).
+- `~x`: Matches everything but `x`.
+- `x & y`: Matches both `x` and `y`.
+- `x ~ y`: Matches `x` but not `y`.
+- `x | y`: Matches either `x` or `y` (or both).
 
 (listed in order of binding strengths)
 
@@ -66,25 +66,25 @@ You can use parentheses to control evaluation order, such as `(x & y) | z` or
 
 You can also specify patterns by using functions.
 
-* `all()`: Matches everything.
-* `none()`: Matches nothing.
+- `all()`: Matches everything.
+- `none()`: Matches nothing.
 
 ## Examples
 
 Show diff excluding `Cargo.lock`.
 
-```shell
+```shellsession
 jj diff '~Cargo.lock'
 ```
 
 List files in `src` excluding Rust sources.
 
-```shell
+```shellsession
 jj file list 'src ~ glob:"**/*.rs"'
 ```
 
 Split a revision in two, putting `foo` into the second commit.
 
-```shell
+```shellsession
 jj split '~foo'
 ```

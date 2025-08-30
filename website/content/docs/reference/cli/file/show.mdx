@@ -1,0 +1,32 @@
+---
+title: jj file show
+isCommand: true
+---
+
+Print contents of files in a revision
+
+If the given path is a directory, files in the directory will be visited recursively.
+
+```shell title="Usage"
+jj file show [OPTIONS] <FILESETS>...
+```
+
+### Arguments
+
+- `<FILESETS>` — Paths to print
+
+### Options
+
+- `-r`, `--revision <REVSET>` — The revision to get the file contents from
+
+  Default value: `@`
+- `-T`, `--template <TEMPLATE>` — Render each file metadata using the given template
+
+  All 0-argument methods of the [`TreeEntry` type] are available as keywords in the template expression. See [`jj help -k templates`] for more information.
+
+  If not specified, this defaults to the `templates.file_show` setting.
+
+  [`TreeEntry` type]: https://jj-vcs.github.io/jj/latest/templates/#treeentry-type
+
+  [`jj help -k templates`]: https://jj-vcs.github.io/jj/latest/templates/
+

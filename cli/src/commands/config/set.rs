@@ -42,7 +42,7 @@ pub struct ConfigSetArgs {
     /// notation), quotes can be omitted. Note that the value may also need
     /// shell quoting. TOML multi-line strings can be useful if the value
     /// contains apostrophes. For example, to set `foo.bar` to the string
-    /// "{don't}" use `jj config set --user foo.bar "'''{don't}'''"`. This is
+    /// `"{don't}"` use `jj config set --user foo.bar "'''{don't}'''"`. This is
     /// valid in both Bash and Fish.
     ///
     /// Alternative, e.g. to avoid dealing with shell quoting, use `jj config

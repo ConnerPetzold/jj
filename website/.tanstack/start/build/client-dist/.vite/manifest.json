@@ -1,0 +1,588 @@
+{
+  "../../../../~start/default-client-entry.tsx": {
+    "file": "assets/main-BCYT0j2h.js",
+    "name": "main",
+    "src": "../../../../~start/default-client-entry.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/fumadocs-ui/dist/components/dialog/search-default.js",
+      "node_modules/fumadocs-core/dist/fetch-C3XV44E6.js",
+      "node_modules/fumadocs-core/dist/algolia-KPRGMSJO.js",
+      "node_modules/fumadocs-core/dist/orama-cloud-TXCWJTK3.js",
+      "node_modules/fumadocs-core/dist/static-K5IAOO6T.js",
+      "node_modules/fumadocs-core/dist/mixedbread-AG5AAOKO.js",
+      "../CHANGELOG.md?collection=docs",
+      "../cli/tests/cli-reference.snap.mdx?collection=docs",
+      "../docs/community-tools.mdx?collection=docs",
+      "../docs/comparisons/git-command-table.mdx?collection=docs",
+      "../docs/comparisons/git-compatibility.mdx?collection=docs",
+      "../docs/comparisons/git.mdx?collection=docs",
+      "../docs/comparisons/related-work.mdx?collection=docs",
+      "../docs/comparisons/sapling.mdx?collection=docs",
+      "../docs/concepts/bookmarks.mdx?collection=docs",
+      "../docs/concepts/conflicts.mdx?collection=docs",
+      "../docs/concepts/glossary.mdx?collection=docs",
+      "../docs/concepts/operation-log.mdx?collection=docs",
+      "../docs/concepts/working-copy.mdx?collection=docs",
+      "../docs/contributing/code-of-conduct.mdx?collection=docs",
+      "../docs/contributing/contributing.mdx?collection=docs",
+      "../docs/contributing/design-doc-blueprint.mdx?collection=docs",
+      "../docs/contributing/design-docs.mdx?collection=docs",
+      "../docs/contributing/paid-contributors.mdx?collection=docs",
+      "../docs/contributing/releasing.mdx?collection=docs",
+      "../docs/contributing/temporary-voting.mdx?collection=docs",
+      "../docs/design-docs/copy-tracking.mdx?collection=docs",
+      "../docs/design-docs/git-submodule-storage.mdx?collection=docs",
+      "../docs/design-docs/git-submodules.mdx?collection=docs",
+      "../docs/design-docs/run.mdx?collection=docs",
+      "../docs/design-docs/sparse-v2.mdx?collection=docs",
+      "../docs/design-docs/tracking-branches.mdx?collection=docs",
+      "../docs/faq.mdx?collection=docs",
+      "../docs/getting-started/github.mdx?collection=docs",
+      "../docs/getting-started/install-and-setup.mdx?collection=docs",
+      "../docs/getting-started/tutorial.mdx?collection=docs",
+      "../docs/getting-started/windows.mdx?collection=docs",
+      "../docs/guides/divergence.mdx?collection=docs",
+      "../docs/index.mdx?collection=docs",
+      "../docs/reference/config.mdx?collection=docs",
+      "../docs/reference/filesets.mdx?collection=docs",
+      "../docs/reference/revsets.mdx?collection=docs",
+      "../docs/reference/templates.mdx?collection=docs",
+      "../docs/roadmap.mdx?collection=docs",
+      "../docs/style-guide.mdx?collection=docs",
+      "../docs/technical-details/architecture.mdx?collection=docs",
+      "../docs/technical-details/concurrency.mdx?collection=docs",
+      "../docs/technical-details/conflicts.mdx?collection=docs",
+      "../docs/technical-details/core-tenets.mdx?collection=docs",
+      "../docs/testimonials.mdx?collection=docs",
+      "../docs/comparisons/meta.json?collection=docs",
+      "../docs/concepts/meta.json?collection=docs",
+      "../docs/design-docs/meta.json?collection=docs",
+      "../docs/getting-started/meta.json?collection=docs",
+      "../docs/meta.json?collection=docs",
+      "../docs/reference/meta.json?collection=docs",
+      "../docs/technical-details/meta.json?collection=docs",
+      "src/routes/_docs/$.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/global-0zlGs8VE.css"
+    ]
+  },
+  "../CHANGELOG.md?collection=docs": {
+    "file": "assets/CHANGELOG-yRqZw3Qa.js",
+    "name": "CHANGELOG",
+    "src": "../CHANGELOG.md?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../cli/tests/cli-reference.snap.mdx?collection=docs": {
+    "file": "assets/cli-reference.snap-BALGhr_Z.js",
+    "name": "cli-reference.snap",
+    "src": "../cli/tests/cli-reference.snap.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/community-tools.mdx?collection=docs": {
+    "file": "assets/community-tools-gjChrAlL.js",
+    "name": "community-tools",
+    "src": "../docs/community-tools.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/comparisons/git-command-table.mdx?collection=docs": {
+    "file": "assets/git-command-table-RH6Ts2W3.js",
+    "name": "git-command-table",
+    "src": "../docs/comparisons/git-command-table.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/comparisons/git-compatibility.mdx?collection=docs": {
+    "file": "assets/git-compatibility-0zx1xVYE.js",
+    "name": "git-compatibility",
+    "src": "../docs/comparisons/git-compatibility.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/comparisons/git.mdx?collection=docs": {
+    "file": "assets/git-Yr4Wld3r.js",
+    "name": "git",
+    "src": "../docs/comparisons/git.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/comparisons/meta.json?collection=docs": {
+    "file": "assets/meta-MWBHd4Ds.js",
+    "name": "meta",
+    "src": "../docs/comparisons/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/comparisons/related-work.mdx?collection=docs": {
+    "file": "assets/related-work-BDdtE9KA.js",
+    "name": "related-work",
+    "src": "../docs/comparisons/related-work.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/comparisons/sapling.mdx?collection=docs": {
+    "file": "assets/sapling-C83EAczT.js",
+    "name": "sapling",
+    "src": "../docs/comparisons/sapling.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/concepts/bookmarks.mdx?collection=docs": {
+    "file": "assets/bookmarks-D2h-a79B.js",
+    "name": "bookmarks",
+    "src": "../docs/concepts/bookmarks.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/concepts/conflicts.mdx?collection=docs": {
+    "file": "assets/conflicts-CGl8ofih.js",
+    "name": "conflicts",
+    "src": "../docs/concepts/conflicts.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/concepts/glossary.mdx?collection=docs": {
+    "file": "assets/glossary-CiCtOF5E.js",
+    "name": "glossary",
+    "src": "../docs/concepts/glossary.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/concepts/meta.json?collection=docs": {
+    "file": "assets/meta-C4tfvM0h.js",
+    "name": "meta",
+    "src": "../docs/concepts/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/concepts/operation-log.mdx?collection=docs": {
+    "file": "assets/operation-log-hVtWasB5.js",
+    "name": "operation-log",
+    "src": "../docs/concepts/operation-log.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/concepts/working-copy.mdx?collection=docs": {
+    "file": "assets/working-copy-CQ7AdwZI.js",
+    "name": "working-copy",
+    "src": "../docs/concepts/working-copy.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/code-of-conduct.mdx?collection=docs": {
+    "file": "assets/code-of-conduct-BGQo9Tt8.js",
+    "name": "code-of-conduct",
+    "src": "../docs/contributing/code-of-conduct.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/contributing.mdx?collection=docs": {
+    "file": "assets/contributing-MBOkO3LV.js",
+    "name": "contributing",
+    "src": "../docs/contributing/contributing.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/design-doc-blueprint.mdx?collection=docs": {
+    "file": "assets/design-doc-blueprint-CkGZqz-C.js",
+    "name": "design-doc-blueprint",
+    "src": "../docs/contributing/design-doc-blueprint.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/design-docs.mdx?collection=docs": {
+    "file": "assets/design-docs-DJy_Uk9D.js",
+    "name": "design-docs",
+    "src": "../docs/contributing/design-docs.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/paid-contributors.mdx?collection=docs": {
+    "file": "assets/paid-contributors-DEAMuTsP.js",
+    "name": "paid-contributors",
+    "src": "../docs/contributing/paid-contributors.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/releasing.mdx?collection=docs": {
+    "file": "assets/releasing-CNWGjn-R.js",
+    "name": "releasing",
+    "src": "../docs/contributing/releasing.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/contributing/temporary-voting.mdx?collection=docs": {
+    "file": "assets/temporary-voting-XakG81rk.js",
+    "name": "temporary-voting",
+    "src": "../docs/contributing/temporary-voting.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/design-docs/copy-tracking.mdx?collection=docs": {
+    "file": "assets/copy-tracking-RFzGD2Wh.js",
+    "name": "copy-tracking",
+    "src": "../docs/design-docs/copy-tracking.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/design-docs/git-submodule-storage.mdx?collection=docs": {
+    "file": "assets/git-submodule-storage-BBy9uVhW.js",
+    "name": "git-submodule-storage",
+    "src": "../docs/design-docs/git-submodule-storage.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/design-docs/git-submodules.mdx?collection=docs": {
+    "file": "assets/git-submodules-CqsxCj_E.js",
+    "name": "git-submodules",
+    "src": "../docs/design-docs/git-submodules.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/design-docs/meta.json?collection=docs": {
+    "file": "assets/meta-qOtW3mof.js",
+    "name": "meta",
+    "src": "../docs/design-docs/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/design-docs/run.mdx?collection=docs": {
+    "file": "assets/run-D5xLV_a2.js",
+    "name": "run",
+    "src": "../docs/design-docs/run.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/design-docs/sparse-v2.mdx?collection=docs": {
+    "file": "assets/sparse-v2-CnT4zKAx.js",
+    "name": "sparse-v2",
+    "src": "../docs/design-docs/sparse-v2.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/design-docs/tracking-branches.mdx?collection=docs": {
+    "file": "assets/tracking-branches-qrABEcql.js",
+    "name": "tracking-branches",
+    "src": "../docs/design-docs/tracking-branches.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/faq.mdx?collection=docs": {
+    "file": "assets/faq-CTsvZLJK.js",
+    "name": "faq",
+    "src": "../docs/faq.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/getting-started/github.mdx?collection=docs": {
+    "file": "assets/github-dySdQYTh.js",
+    "name": "github",
+    "src": "../docs/getting-started/github.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/getting-started/install-and-setup.mdx?collection=docs": {
+    "file": "assets/install-and-setup-S7OQkaeu.js",
+    "name": "install-and-setup",
+    "src": "../docs/getting-started/install-and-setup.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/getting-started/meta.json?collection=docs": {
+    "file": "assets/meta-wWa_R7ab.js",
+    "name": "meta",
+    "src": "../docs/getting-started/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/getting-started/tutorial.mdx?collection=docs": {
+    "file": "assets/tutorial-D1xzwn_d.js",
+    "name": "tutorial",
+    "src": "../docs/getting-started/tutorial.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/getting-started/windows.mdx?collection=docs": {
+    "file": "assets/windows-z6j28Hnf.js",
+    "name": "windows",
+    "src": "../docs/getting-started/windows.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/guides/divergence.mdx?collection=docs": {
+    "file": "assets/divergence-Dr9dHOZH.js",
+    "name": "divergence",
+    "src": "../docs/guides/divergence.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/index.mdx?collection=docs": {
+    "file": "assets/index-C4In_gyZ.js",
+    "name": "index",
+    "src": "../docs/index.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/meta.json?collection=docs": {
+    "file": "assets/meta-CCvLJMsy.js",
+    "name": "meta",
+    "src": "../docs/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/reference/config.mdx?collection=docs": {
+    "file": "assets/config-desLm_mV.js",
+    "name": "config",
+    "src": "../docs/reference/config.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/reference/filesets.mdx?collection=docs": {
+    "file": "assets/filesets-e3ljcPBL.js",
+    "name": "filesets",
+    "src": "../docs/reference/filesets.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/reference/meta.json?collection=docs": {
+    "file": "assets/meta-BJTtPga8.js",
+    "name": "meta",
+    "src": "../docs/reference/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/reference/revsets.mdx?collection=docs": {
+    "file": "assets/revsets-BJfAjB_H.js",
+    "name": "revsets",
+    "src": "../docs/reference/revsets.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/reference/templates.mdx?collection=docs": {
+    "file": "assets/templates-BtXCRZvR.js",
+    "name": "templates",
+    "src": "../docs/reference/templates.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/roadmap.mdx?collection=docs": {
+    "file": "assets/roadmap-nfO9tAy9.js",
+    "name": "roadmap",
+    "src": "../docs/roadmap.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/style-guide.mdx?collection=docs": {
+    "file": "assets/style-guide-BP1gRrln.js",
+    "name": "style-guide",
+    "src": "../docs/style-guide.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/technical-details/architecture.mdx?collection=docs": {
+    "file": "assets/architecture-D42iVSle.js",
+    "name": "architecture",
+    "src": "../docs/technical-details/architecture.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ],
+    "assets": [
+      "assets/types-Cn9U8A0g.svg"
+    ]
+  },
+  "../docs/technical-details/concurrency.mdx?collection=docs": {
+    "file": "assets/concurrency-5o-0jLsM.js",
+    "name": "concurrency",
+    "src": "../docs/technical-details/concurrency.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/technical-details/conflicts.mdx?collection=docs": {
+    "file": "assets/conflicts-DxaGesaH.js",
+    "name": "conflicts",
+    "src": "../docs/technical-details/conflicts.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/technical-details/core-tenets.mdx?collection=docs": {
+    "file": "assets/core-tenets-jykSuIV4.js",
+    "name": "core-tenets",
+    "src": "../docs/technical-details/core-tenets.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "../docs/technical-details/meta.json?collection=docs": {
+    "file": "assets/meta-CVpTT4Dt.js",
+    "name": "meta",
+    "src": "../docs/technical-details/meta.json?collection=docs",
+    "isDynamicEntry": true
+  },
+  "../docs/technical-details/types.svg": {
+    "file": "assets/types-Cn9U8A0g.svg",
+    "src": "../docs/technical-details/types.svg"
+  },
+  "../docs/testimonials.mdx?collection=docs": {
+    "file": "assets/testimonials-CzB5mmWF.js",
+    "name": "testimonials",
+    "src": "../docs/testimonials.mdx?collection=docs",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "/Users/conner/jj/website/src/styles/global.css": {
+    "file": "assets/global-0zlGs8VE.css",
+    "src": "/Users/conner/jj/website/src/styles/global.css"
+  },
+  "_chunk-CNWEGOUF-qJr9DjGl.js": {
+    "file": "assets/chunk-CNWEGOUF-qJr9DjGl.js",
+    "name": "chunk-CNWEGOUF"
+  },
+  "_chunk-ZMWYLUDP-oajMeTFk.js": {
+    "file": "assets/chunk-ZMWYLUDP-oajMeTFk.js",
+    "name": "chunk-ZMWYLUDP"
+  },
+  "node_modules/fumadocs-core/dist/algolia-KPRGMSJO.js": {
+    "file": "assets/algolia-KPRGMSJO-DGS7i7Ft.js",
+    "name": "algolia-KPRGMSJO",
+    "src": "node_modules/fumadocs-core/dist/algolia-KPRGMSJO.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-CNWEGOUF-qJr9DjGl.js"
+    ]
+  },
+  "node_modules/fumadocs-core/dist/fetch-C3XV44E6.js": {
+    "file": "assets/fetch-C3XV44E6-F2YKbHTa.js",
+    "name": "fetch-C3XV44E6",
+    "src": "node_modules/fumadocs-core/dist/fetch-C3XV44E6.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/fumadocs-core/dist/mixedbread-AG5AAOKO.js": {
+    "file": "assets/mixedbread-AG5AAOKO-DWAJ-1Nh.js",
+    "name": "mixedbread-AG5AAOKO",
+    "src": "node_modules/fumadocs-core/dist/mixedbread-AG5AAOKO.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/fumadocs-core/dist/orama-cloud-TXCWJTK3.js": {
+    "file": "assets/orama-cloud-TXCWJTK3-Cy1HQ6zw.js",
+    "name": "orama-cloud-TXCWJTK3",
+    "src": "node_modules/fumadocs-core/dist/orama-cloud-TXCWJTK3.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-ZMWYLUDP-oajMeTFk.js",
+      "_chunk-CNWEGOUF-qJr9DjGl.js"
+    ]
+  },
+  "node_modules/fumadocs-core/dist/static-K5IAOO6T.js": {
+    "file": "assets/static-K5IAOO6T-Qb6tCE05.js",
+    "name": "static-K5IAOO6T",
+    "src": "node_modules/fumadocs-core/dist/static-K5IAOO6T.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-ZMWYLUDP-oajMeTFk.js",
+      "_chunk-CNWEGOUF-qJr9DjGl.js",
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "node_modules/fumadocs-ui/dist/components/dialog/search-default.js": {
+    "file": "assets/search-default-CJrDBl9i.js",
+    "name": "search-default",
+    "src": "node_modules/fumadocs-ui/dist/components/dialog/search-default.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  },
+  "src/routes/_docs/$.tsx?tsr-split=component": {
+    "file": "assets/_-DiNDslgx.js",
+    "name": "_",
+    "src": "src/routes/_docs/$.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ]
+  }
+}

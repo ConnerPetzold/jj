@@ -1,0 +1,105 @@
+---
+title: jj
+isCommand: true
+---
+
+Jujutsu (An experimental VCS)
+
+To get started, see the tutorial [`jj help -k tutorial`].
+
+[`jj help -k tutorial`]: https://jj-vcs.github.io/jj/latest/tutorial/
+
+```shell title="Usage"
+jj [OPTIONS] [COMMAND]
+```
+
+'jj help --help' lists available keywords. Use 'jj help -k' to show help for one of these keywords.
+
+
+### Subcommands
+
+- [`abandon`](./jj/abandon) — Abandon a revision
+- [`absorb`](./jj/absorb) — Move changes from a revision into the stack of mutable revisions
+- [`bookmark`](./jj/bookmark) — Manage bookmarks [default alias: b]
+- [`commit`](./jj/commit) — Update the description and create a new change on top [default alias: ci]
+- [`config`](./jj/config) — Manage config options
+- [`describe`](./jj/describe) — Update the change description or other metadata [default alias: desc]
+- [`diff`](./jj/diff) — Compare file contents between two revisions
+- [`diffedit`](./jj/diffedit) — Touch up the content changes in a revision with a diff editor
+- [`duplicate`](./jj/duplicate) — Create new changes with the same content as existing ones
+- [`edit`](./jj/edit) — Sets the specified revision as the working-copy revision
+- [`evolog`](./jj/evolog) — Show how a change has evolved over time
+- [`file`](./jj/file) — File operations
+- [`fix`](./jj/fix) — Update files with formatting fixes or other changes
+- [`git`](./jj/git) — Commands for working with Git remotes and the underlying Git repo
+- [`help`](./jj/help) — Print this message or the help of the given subcommand(s)
+- [`interdiff`](./jj/interdiff) — Compare the changes of two commits
+- [`log`](./jj/log) — Show revision history
+- [`new`](./jj/new) — Create a new, empty change and (by default) edit it in the working copy
+- [`next`](./jj/next) — Move the working-copy commit to the child revision
+- [`operation`](./jj/operation) — Commands for working with the operation log
+- [`parallelize`](./jj/parallelize) — Parallelize revisions by making them siblings
+- [`prev`](./jj/prev) — Change the working copy revision relative to the parent revision
+- [`rebase`](./jj/rebase) — Move revisions to different parent(s)
+- [`redo`](./jj/redo) — Redo the most recently undone operation
+- [`resolve`](./jj/resolve) — Resolve conflicted files with an external merge tool
+- [`restore`](./jj/restore) — Restore paths from another revision
+- [`revert`](./jj/revert) — Apply the reverse of the given revision(s)
+- [`root`](./jj/root) — Show the current workspace root directory (shortcut for `jj workspace root`)
+- [`show`](./jj/show) — Show commit description and changes in a revision
+- [`sign`](./jj/sign) — Cryptographically sign a revision
+- [`simplify-parents`](./jj/simplify-parents) — Simplify parent edges for the specified revision(s)
+- [`sparse`](./jj/sparse) — Manage which paths from the working-copy commit are present in the working copy
+- [`split`](./jj/split) — Split a revision in two
+- [`squash`](./jj/squash) — Move changes from a revision into another revision
+- [`status`](./jj/status) — Show high-level repo status [default alias: st]
+- [`tag`](./jj/tag) — Manage tags
+- [`touch`](./jj/touch) — Modify the metadata of a revision without changing its content
+- [`undo`](./jj/undo) — Undo the last operation
+- [`unsign`](./jj/unsign) — Drop a cryptographic signature
+- [`util`](./jj/util) — Infrequently used commands such as for generating shell completions
+- [`version`](./jj/version) — Display version information
+- [`workspace`](./jj/workspace) — Commands for working with workspaces
+
+### Options
+
+- `-R`, `--repository <REPOSITORY>` — Path to repository to operate on
+
+  By default, Jujutsu searches for the closest .jj/ directory in an ancestor of the current working directory.
+- `--ignore-working-copy` — Don't snapshot the working copy, and don't update it
+
+  By default, Jujutsu snapshots the working copy at the beginning of every command. The working copy is also updated at the end of the command, if the command modified the working-copy commit (`@`). If you want to avoid snapshotting the working copy and instead see a possibly stale working-copy commit, you can use `--ignore-working-copy`. This may be useful e.g. in a command prompt, especially if you have another process that commits the working copy.
+
+  Loading the repository at a specific operation with `--at-operation` implies `--ignore-working-copy`.
+- `--ignore-immutable` — Allow rewriting immutable commits
+
+  By default, Jujutsu prevents rewriting commits in the configured set of immutable commits. This option disables that check and lets you rewrite any commit but the root commit.
+
+  This option only affects the check. It does not affect the `immutable_heads()` revset or the `immutable` template keyword.
+- `--at-operation <AT_OPERATION>` [alias: `at-op`] — Operation to load the repo at
+
+  Operation to load the repo at. By default, Jujutsu loads the repo at the most recent operation, or at the merge of the divergent operations if any.
+
+  You can use `--at-op=<operation ID>` to see what the repo looked like at an earlier operation. For example `jj --at-op=<operation ID> st` will show you what `jj st` would have shown you when the given operation had just finished. `--at-op=@` is pretty much the same as the default except that divergent operations will never be merged.
+
+  Use `jj op log` to find the operation ID you want. Any unambiguous prefix of the operation ID is enough.
+
+  When loading the repo at an earlier operation, the working copy will be ignored, as if `--ignore-working-copy` had been specified.
+
+  It is possible to run mutating commands when loading the repo at an earlier operation. Doing that is equivalent to having run concurrent commands starting at the earlier operation. There's rarely a reason to do that, but it is possible.
+- `--debug` — Enable debug logging
+- `--color <WHEN>` — When to colorize output
+
+  Possible values: `always`, `never`, `debug`, `auto`
+
+- `--quiet` — Silence non-primary command output
+
+  For example, `jj file list` will still list files, but it won't tell you if the working copy was snapshotted or if descendants were rebased.
+
+  Warnings and errors will still be printed.
+- `--no-pager` — Disable the pager
+- `--config <NAME=VALUE>` — Additional configuration options (can be repeated)
+
+  The name should be specified as TOML dotted keys. The value should be specified as a TOML expression. If string value isn't enclosed by any TOML constructs (such as array notation), quotes can be omitted.
+- `--config-file <PATH>` — Additional configuration files (can be repeated)
+

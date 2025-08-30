@@ -1,0 +1,41 @@
+---
+title: jj workspace add
+isCommand: true
+---
+
+Add a workspace
+
+By default, the new workspace inherits the sparse patterns of the current workspace. You can override this with the `--sparse-patterns` option.
+
+```shell title="Usage"
+jj workspace add [OPTIONS] <DESTINATION>
+```
+
+### Arguments
+
+- `<DESTINATION>` — Where to create the new workspace
+
+### Options
+
+- `--name <NAME>` — A name for the workspace
+
+  To override the default, which is the basename of the destination directory.
+- `-r`, `--revision <REVSETS>` — A list of parent revisions for the working-copy commit of the newly created workspace. You may specify nothing, or any number of parents.
+
+  If no revisions are specified, the new workspace will be created, and its working-copy commit will exist on top of the parent(s) of the working-copy commit in the current workspace, i.e. they will share the same parent(s).
+
+  If any revisions are specified, the new workspace will be created, and the new working-copy commit will be created with all these revisions as parents, i.e. the working-copy commit will exist as if you had run `jj new r1 r2 r3 ...`.
+- `--sparse-patterns <SPARSE_PATTERNS>` — How to handle sparse patterns when creating a new workspace
+
+  Default value: `copy`
+
+  Possible values:
+
+  - `copy`:
+    Copy all sparse patterns from the current workspace
+  - `full`:
+    Include all files in the new workspace
+  - `empty`:
+    Clear all files from the workspace (it will be empty)
+
+
