@@ -1,0 +1,26 @@
+---
+title: jj config
+isCommand: true
+---
+
+Manage config options
+
+Operates on jj configuration, which comes from the config file and environment variables.
+
+See [`jj help -k config`] to know more about file locations, supported config options, and other details about `jj config`.
+
+[`jj help -k config`]: https://jj-vcs.github.io/jj/latest/config/
+
+```shell title="Usage"
+jj config <COMMAND>
+```
+
+### Subcommands
+
+- [`edit`](./jj/config/edit) — Start an editor on a jj config file
+- [`get`](./jj/config/get) — Get the value of a given config option.
+- [`list`](./jj/config/list) — List variables set in config files, along with their values
+- [`path`](./jj/config/path) — Print the paths to the config files
+- [`set`](./jj/config/set) — Update a config file to set the given option to a given value
+- [`unset`](./jj/config/unset) — Update a config file to unset the given option
+

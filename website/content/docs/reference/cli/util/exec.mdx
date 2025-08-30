@@ -1,0 +1,58 @@
+---
+title: jj util exec
+isCommand: true
+---
+
+Execute an external command via jj
+
+This is useful for arbitrary aliases.
+
+!! WARNING !!
+
+The following technique just provides a convenient syntax for running
+arbitrary code on your system. Using it irresponsibly may cause damage
+ranging from breaking the behavior of `jj undo` to wiping your file system.
+Exercise the same amount of caution while writing these aliases as you would
+when typing commands into the terminal!
+
+This feature may be removed or replaced by an embedded scripting language in
+the future.
+
+Let's assume you have a script called "my-jj-script" in you $PATH and you
+would like to execute it as "jj my-script". You would add the following line
+to your configuration file to achieve that:
+
+```toml
+[aliases]
+my-script = ["util", "exec", "--", "my-jj-script"]
+#                            ^^^^
+# This makes sure that flags are passed to your script instead of parsed by jj.
+```
+
+If you don't want to manage your script as a separate file, you can even
+inline it into your config file:
+
+```toml
+[aliases]
+my-inline-script = ["util", "exec", "--", "bash", "-c", """
+set -euo pipefail
+echo "Look Ma, everything in one file!"
+echo "args: $@"
+""", ""]
+#    ^^
+# This last empty string will become "$0" in bash, so your actual arguments
+# are all included in "$@" and start at "$1" as expected.
+```
+
+> Note: Shebangs (e.g. `#!/usr/bin/env`) aren't necessary since you're
+> already explicitly passing your script into the right shell.
+
+```shell title="Usage"
+jj util exec <COMMAND> [ARGS]...
+```
+
+### Arguments
+
+- `<COMMAND>` — External command to execute
+- `<ARGS>` — Arguments to pass to the external command
+

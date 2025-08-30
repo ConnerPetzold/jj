@@ -1,0 +1,37 @@
+---
+title: jj operation revert
+isCommand: true
+---
+
+Create a new operation that reverts an earlier operation
+
+This reverts an individual operation by applying the inverse of the operation.
+
+```shell title="Usage"
+jj operation revert [OPTIONS] [OPERATION]
+```
+
+### Arguments
+
+- `<OPERATION>` — The operation to revert
+
+  Use `jj op log` to find an operation to revert.
+
+  Default value: `@`
+
+### Options
+
+- `--what <WHAT>` — What portions of the local state to restore (can be repeated)
+
+  This option is EXPERIMENTAL.
+
+  Default values: `repo`, `remote-tracking`
+
+  Possible values:
+
+  - `repo`:
+    The jj repo state and local bookmarks
+  - `remote-tracking`:
+    The remote-tracking bookmarks. Do not restore these if you'd like to push after the undo
+
+

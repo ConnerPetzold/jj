@@ -1,0 +1,39 @@
+---
+title: jj util completion
+isCommand: true
+---
+
+Print a command-line-completion script
+
+Apply it by running one of these:
+
+- Bash: `source <(jj util completion bash)`
+- Fish: `jj util completion fish | source`
+- Nushell:
+    ```nu
+    jj util completion nushell | save "completions-jj.nu"
+    use "completions-jj.nu" *  # Or `source "completions-jj.nu"`
+    ```
+- Zsh:
+    ```shell
+    autoload -U compinit
+    compinit
+    source <(jj util completion zsh)
+    ```
+
+See the docs on [command-line completion] for more details.
+
+[command-line completion]:
+   https://jj-vcs.github.io/jj/latest/install-and-setup/#command-line-completion
+
+```shell title="Usage"
+jj util completion <SHELL>
+```
+
+### Arguments
+
+- `<SHELL>`
+
+  Possible values: `bash`, `elvish`, `fish`, `nushell`, `power-shell`, `zsh`
+
+

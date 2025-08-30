@@ -1,0 +1,35 @@
+---
+title: jj operation restore
+isCommand: true
+---
+
+Create a new operation that restores the repo to an earlier state
+
+This restores the repo to the state at the specified operation, effectively undoing all later operations. It does so by creating a new operation.
+
+```shell title="Usage"
+jj operation restore [OPTIONS] <OPERATION>
+```
+
+### Arguments
+
+- `<OPERATION>` — The operation to restore to
+
+  Use `jj op log` to find an operation to restore to. Use e.g. `jj --at-op=<operation ID> log` before restoring to an operation to see the state of the repo at that operation.
+
+### Options
+
+- `--what <WHAT>` — What portions of the local state to restore (can be repeated)
+
+  This option is EXPERIMENTAL.
+
+  Default values: `repo`, `remote-tracking`
+
+  Possible values:
+
+  - `repo`:
+    The jj repo state and local bookmarks
+  - `remote-tracking`:
+    The remote-tracking bookmarks. Do not restore these if you'd like to push after the undo
+
+

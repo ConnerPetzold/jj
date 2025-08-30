@@ -1,4 +1,5 @@
 import Logo from "@/components/Logo";
+import { SidebarItem } from "@/components/sidebar";
 import { VersionPicker } from "@/components/VersionPicker";
 import { baseOptions } from "@/lib/layout.shared";
 import { source } from "@/lib/source";
@@ -8,6 +9,11 @@ export default function Layout({ children }: LayoutProps<"/docs">) {
   return (
     <DocsLayout
       {...baseOptions()}
+      // sidebar={{
+      //   components: {
+      //     Item: SidebarItem,
+      //   },
+      // }}
       nav={{
         title: (
           <>

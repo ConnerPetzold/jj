@@ -1,0 +1,38 @@
+---
+title: jj interdiff
+isCommand: true
+---
+
+Compare the changes of two commits
+
+This excludes changes from other commits by temporarily rebasing `--from` onto `--to`'s parents. If you wish to compare the same change across versions, consider `jj evolog -p` instead.
+
+```shell title="Usage"
+jj interdiff [OPTIONS] <--from <REVSET>|--to <REVSET>> [FILESETS]...
+```
+
+### Arguments
+
+- `<FILESETS>` — Restrict the diff to these paths
+
+### Options
+
+- `-f`, `--from <REVSET>` — Show changes from this revision
+- `-t`, `--to <REVSET>` — Show changes to this revision
+- `-s`, `--summary` — For each path, show only whether it was modified, added, or deleted
+- `--stat` — Show a histogram of the changes
+- `--types` — For each path, show only its type before and after
+
+  The diff is shown as two letters. The first letter indicates the type before and the second letter indicates the type after. '-' indicates that the path was not present, 'F' represents a regular file, `L' represents a symlink, 'C' represents a conflict, and 'G' represents a Git submodule.
+- `--name-only` — For each path, show only its path
+
+  Typically useful for shell commands like: `jj diff -r @- --name-only | xargs perl -pi -e's/OLD/NEW/g`
+- `--git` — Show a Git-format diff
+- `--color-words` — Show a word-level diff with changes indicated only by color
+- `--tool <TOOL>` — Generate diff by external command
+
+  A builtin format can also be specified as `:<name>`. For example, `--tool=:git` is equivalent to `--git`.
+- `--context <CONTEXT>` — Number of lines of context to show
+- `-w`, `--ignore-all-space` — Ignore whitespace when comparing lines
+- `-b`, `--ignore-space-change` — Ignore changes in amount of whitespace when comparing lines
+

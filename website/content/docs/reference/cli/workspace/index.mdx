@@ -1,0 +1,26 @@
+---
+title: jj workspace
+isCommand: true
+---
+
+Commands for working with workspaces
+
+Workspaces let you add additional working copies attached to the same repo. A common use case is so you can run a slow build or test in one workspace while you're continuing to write code in another workspace.
+
+Each workspace has its own working-copy commit. When you have more than one workspace attached to a repo, they are indicated by `<workspace name>@` in `jj log`.
+
+Each workspace also has own sparse patterns.
+
+```shell title="Usage"
+jj workspace <COMMAND>
+```
+
+### Subcommands
+
+- [`add`](./jj/workspace/add) — Add a workspace
+- [`forget`](./jj/workspace/forget) — Stop tracking a workspace's working-copy commit in the repo
+- [`list`](./jj/workspace/list) — List workspaces
+- [`rename`](./jj/workspace/rename) — Renames the current workspace
+- [`root`](./jj/workspace/root) — Show the current workspace root directory
+- [`update-stale`](./jj/workspace/update-stale) — Update a workspace that has become stale
+

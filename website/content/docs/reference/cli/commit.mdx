@@ -1,0 +1,41 @@
+---
+title: jj commit
+isCommand: true
+---
+
+Update the description and create a new change on top [default alias: ci]
+
+This command is very similar to `jj split`. Differences include:
+
+* `jj commit` is not interactive by default (it selects all changes).
+
+* `jj commit` doesn't have a `-r` option. It always acts on the working-copy commit (@).
+
+* `jj split` (without `-d/-A/-B`) will move bookmarks forward from the old change to the child change. `jj commit` doesn't move bookmarks forward.
+
+* `jj split` allows you to move the selected changes to a different destination with `-d/-A/-B`.
+
+```shell title="Usage"
+jj commit [OPTIONS] [FILESETS]...
+```
+
+### Arguments
+
+- `<FILESETS>` — Put these paths in the first commit
+
+### Options
+
+- `-i`, `--interactive` — Interactively choose which changes to include in the first commit
+- `--tool <NAME>` — Specify diff editor to be used (implies --interactive)
+- `-m`, `--message <MESSAGE>` — The change description to use (don't open editor)
+- `--reset-author` — Reset the author to the configured user
+
+  This resets the author name, email, and timestamp.
+
+  You can use it in combination with the JJ_USER and JJ_EMAIL environment variables to set a different author:
+
+  $ JJ_USER='Foo Bar' JJ_EMAIL=foo@bar.com jj commit --reset-author
+- `--author <AUTHOR>` — Set author to the provided string
+
+  This changes author name and email while retaining author timestamp for non-discardable commits.
+

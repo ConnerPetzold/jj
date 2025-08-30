@@ -58,7 +58,7 @@ the change ID is ambiguous.
 If one of the divergent commits is clearly obsolete or incorrect, simply abandon
 it:
 
-```shell
+```shellsession
 # Abandon the unwanted commit using its commit ID
 jj abandon <unwanted-commit-id>
 
@@ -75,7 +75,7 @@ If you want to keep both versions as separate changes with different change IDs,
 you can duplicate one of the commits to generate a new change ID, then abandon
 the original:
 
-```shell
+```shellsession
 # Duplicate one of the commits to create a new change ID
 jj duplicate <commit-id>
 
@@ -89,7 +89,7 @@ This preserves both versions of the content while resolving the divergence.
 
 When you want to combine the content from both divergent commits:
 
-```shell
+```shellsession
 # Squash one commit into the other
 jj squash --from <source-commit-id> --into <target-commit-id>
 ```

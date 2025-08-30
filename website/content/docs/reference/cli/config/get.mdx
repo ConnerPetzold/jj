@@ -1,0 +1,25 @@
+---
+title: jj config get
+isCommand: true
+---
+
+Get the value of a given config option.
+
+Unlike `jj config list`, the result of `jj config get` is printed without
+extra formatting and therefore is usable in scripting. For example:
+
+$ jj config list user.name
+user.name="Martin von Zweigbergk"
+$ jj config get user.name
+Martin von Zweigbergk
+
+```shell title="Usage"
+jj config get <NAME>
+```
+
+**Command Alias:** `g`
+
+### Arguments
+
+- `<NAME>`
+

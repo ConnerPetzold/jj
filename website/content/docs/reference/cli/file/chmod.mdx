@@ -1,0 +1,32 @@
+---
+title: jj file chmod
+isCommand: true
+---
+
+Sets or removes the executable bit for paths in the repo
+
+Unlike the POSIX `chmod`, `jj file chmod` also works on Windows, on conflicted files, and on arbitrary revisions.
+
+```shell title="Usage"
+jj file chmod [OPTIONS] <MODE> <FILESETS>...
+```
+
+### Arguments
+
+- `<MODE>`
+
+  Possible values:
+
+  - `n`:
+    Make a path non-executable (alias: normal)
+  - `x`:
+    Make a path executable (alias: executable)
+
+- `<FILESETS>` — Paths to change the executable bit for
+
+### Options
+
+- `-r`, `--revision <REVSET>` — The revision to update
+
+  Default value: `@`
+

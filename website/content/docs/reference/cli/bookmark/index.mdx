@@ -1,0 +1,27 @@
+---
+title: jj bookmark
+isCommand: true
+---
+
+Manage bookmarks [default alias: b]
+
+See [`jj help -k bookmarks`] for more information.
+
+[`jj help -k bookmarks`]: https://jj-vcs.github.io/jj/latest/bookmarks
+
+```shell title="Usage"
+jj bookmark <COMMAND>
+```
+
+### Subcommands
+
+- [`create`](./jj/bookmark/create) — Create a new bookmark
+- [`delete`](./jj/bookmark/delete) — Delete an existing bookmark and propagate the deletion to remotes on the next push
+- [`forget`](./jj/bookmark/forget) — Forget a bookmark without marking it as a deletion to be pushed
+- [`list`](./jj/bookmark/list) — List bookmarks and their targets
+- [`move`](./jj/bookmark/move) — Move existing bookmarks to target revision
+- [`rename`](./jj/bookmark/rename) — Rename `old` bookmark name to `new` bookmark name
+- [`set`](./jj/bookmark/set) — Create or update a bookmark to point to a certain commit
+- [`track`](./jj/bookmark/track) — Start tracking given remote bookmarks
+- [`untrack`](./jj/bookmark/untrack) — Stop tracking given remote bookmarks
+

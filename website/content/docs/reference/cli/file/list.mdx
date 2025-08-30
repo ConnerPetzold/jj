@@ -1,0 +1,28 @@
+---
+title: jj file list
+isCommand: true
+---
+
+List files in a revision
+
+```shell title="Usage"
+jj file list [OPTIONS] [FILESETS]...
+```
+
+### Arguments
+
+- `<FILESETS>` — Only list files matching these prefixes (instead of all files)
+
+### Options
+
+- `-r`, `--revision <REVSET>` — The revision to list files in
+
+  Default value: `@`
+- `-T`, `--template <TEMPLATE>` — Render each file entry using the given template
+
+  All 0-argument methods of the [`TreeEntry` type] are available as keywords in the template expression. See [`jj help -k templates`] for more information.
+
+  [`TreeEntry` type]: https://jj-vcs.github.io/jj/latest/templates/#treeentry-type
+
+  [`jj help -k templates`]: https://jj-vcs.github.io/jj/latest/templates/
+

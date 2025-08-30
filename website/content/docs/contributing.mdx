@@ -199,7 +199,7 @@ These are listed roughly in order of decreasing importance.
 
 Run this in the jj repo:
 
-```shell
+```shellsession
 jj config set --repo fix.tools.rustfmt '{ command = ["rustfmt", "+nightly"], patterns = ["glob:**/*.rs"] }'
 ```
 
@@ -207,7 +207,7 @@ jj config set --repo fix.tools.rustfmt '{ command = ["rustfmt", "+nightly"], pat
 > since the devShell is already configured to pull in a nightly version of
 > rustfmt:
 >
-> ```shell
+> ```shellsession
 > jj config set --repo fix.tools.rustfmt '{ command = ["rustfmt"], patterns = ["glob:**/*.rs"] }'
 > ```
 
@@ -225,7 +225,7 @@ an issue worth solving using a system monitoring tool such as `htop`.
 
 A simple way to use `mold` is via the `-run` option, e.g.:
 
-```shell
+```shellsession
 mold -run cargo insta test --workspace --test-runner nextest
 ```
 
@@ -310,7 +310,7 @@ version and the dependencies needed to build the docs. Install it like so:
 
 === "macOS/Linux"
 
-    ```shell
+    ```shellsession
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
 
@@ -318,25 +318,25 @@ version and the dependencies needed to build the docs. Install it like so:
         If you don't have `~/.local/bin` in your `PATH`, the installer will
         modify your shell profile. To avoid it:
 
-        ```shell
+        ```shellsession
         curl -LsSf https://astral.sh/uv/install.sh | env INSTALLER_NO_MODIFY_PATH=1 sh
         ```
 
 === "Windows"
 
-    ```shell
+    ```shellsession
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
     ```
 
 === "Homebrew"
 
-    ```shell
+    ```shellsession
     brew install uv
     ```
 
 === "Cargo"
 
-    ```shell
+    ```shellsession
     # This might take a while
     cargo install --git https://github.com/astral-sh/uv uv
     ```
@@ -350,7 +350,7 @@ version and the dependencies needed to build the docs. Install it like so:
 
 To build the docs, run while inside the `jj` repository:
 
-```shell
+```shellsession
 uv run mkdocs serve
 ```
 
@@ -369,7 +369,7 @@ are expected and harmless.
 To build the rendered docs for offline distribution or to view them from your file
 system, run while inside the `jj` repository:
 
-```shell
+```shellsession
 MKDOCS_OFFLINE=true uv run mkdocs build
 ```
 
@@ -409,7 +409,7 @@ Windows, you'll need to understand and adapt the shell script):
     documentation](#previewing-the-html-documentation), and run the same `sh` script
     that is used in GitHub CI (details below):
 
-        ```shell
+        ```shellsession
         .github/scripts/docs-build-deploy prerelease main --push
         ```
 
@@ -425,7 +425,7 @@ Windows, you'll need to understand and adapt the shell script):
     `https://jjfan.github.io/jj/main/`. If you'd like to test out version switching
     back and forth, you can also rebuild the docs for the latest release as follows.
 
-        ```shell
+        ```shellsession
         jj new v1.33.1  # Let's say `jj 1.33.1` is the currently the latest release
         .github/scripts/docs-build-deploy v1.33.1 latest --push
         ```
@@ -434,7 +434,7 @@ Windows, you'll need to understand and adapt the shell script):
     same spot as it is upstream. If you configured the "upstream" remote,
     this can be done with:
 
-        ```shell
+        ```shellsession
         # This will LOSE any changes you made to `gh-pages`
         jj git fetch --remote upstream
         jj bookmark set gh-pages -r gh-pages@upstream
@@ -500,7 +500,7 @@ turns on `debug` log level for `jj-lib` and `jj-cli` only.
 One easy-to-use sampling profiler
 is [samply](https://github.com/mstange/samply). For example:
 
-```shell
+```shellsession
 cargo install samply
 samply record jj diff
 ```
@@ -510,7 +510,7 @@ Then just open the link it prints.
 Another option is to use the instrumentation we've added manually (using
 `tracing::instrument`) in various places. For example:
 
-```shell
+```shellsession
 JJ_TRACE=/tmp/trace.json jj diff
 ```
 

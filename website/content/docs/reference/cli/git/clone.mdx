@@ -1,0 +1,42 @@
+---
+title: jj git clone
+isCommand: true
+---
+
+Create a new repo backed by a clone of a Git repo
+
+The Git repo will be a bare git repo stored inside the `.jj/` directory.
+
+```shell title="Usage"
+jj git clone [OPTIONS] <SOURCE> [DESTINATION]
+```
+
+### Arguments
+
+- `<SOURCE>` — URL or path of the Git repo to clone
+
+  Local path will be resolved to absolute form.
+- `<DESTINATION>` — Specifies the target directory for the Jujutsu repository clone. If not provided, defaults to a directory named after the last component of the source URL. The full directory path will be created if it doesn't exist
+
+### Options
+
+- `--remote <REMOTE_NAME>` — Name of the newly created remote
+
+  Default value: `origin`
+- `--colocate` — Whether or not to colocate the Jujutsu repo with the git repo
+- `--no-colocate` — Disable colocation of the Jujutsu repo with the git repo
+- `--depth <DEPTH>` — Create a shallow clone of the given depth
+- `--fetch-tags <FETCH_TAGS>` — Configure when to fetch tags
+
+  Unless otherwise specified, the initial clone will fetch all tags, while all subsequent fetches will only fetch included tags.
+
+  Possible values:
+
+  - `all`:
+    Always fetch all tags
+  - `included`:
+    Only fetch tags that point to objects that are already being transmitted
+  - `none`:
+    Do not fetch any tags
+
+

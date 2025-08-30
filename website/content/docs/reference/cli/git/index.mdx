@@ -1,0 +1,28 @@
+---
+title: jj git
+isCommand: true
+---
+
+Commands for working with Git remotes and the underlying Git repo
+
+See this [comparison], including a [table of commands].
+
+[comparison]: https://jj-vcs.github.io/jj/latest/git-comparison/.
+
+[table of commands]: https://jj-vcs.github.io/jj/latest/git-command-table
+
+```shell title="Usage"
+jj git <COMMAND>
+```
+
+### Subcommands
+
+- [`clone`](./jj/git/clone) — Create a new repo backed by a clone of a Git repo
+- [`export`](./jj/git/export) — Update the underlying Git repo with changes made in the repo
+- [`fetch`](./jj/git/fetch) — Fetch from a Git remote
+- [`import`](./jj/git/import) — Update repo with changes made in the underlying Git repo
+- [`init`](./jj/git/init) — Create a new Git backed repo
+- [`push`](./jj/git/push) — Push to a Git remote
+- [`remote`](./jj/git/remote) — Manage Git remotes
+- [`root`](./jj/git/root) — Show the underlying Git directory of a repository using the Git backend
+

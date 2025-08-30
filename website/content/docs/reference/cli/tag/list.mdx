@@ -1,0 +1,31 @@
+---
+title: jj tag list
+isCommand: true
+---
+
+List tags
+
+```shell title="Usage"
+jj tag list [OPTIONS] [NAMES]...
+```
+
+**Command Alias:** `l`
+
+### Arguments
+
+- `<NAMES>` — Show tags whose local name matches
+
+  By default, the specified name matches exactly. Use `glob:` prefix to select tags by [wildcard pattern].
+
+  [wildcard pattern]: https://jj-vcs.github.io/jj/latest/revsets/#string-patterns
+
+### Options
+
+- `-T`, `--template <TEMPLATE>` — Render each tag using the given template
+
+  All 0-argument methods of the [`CommitRef` type] are available as keywords in the template expression. See [`jj help -k templates`] for more information.
+
+  [`CommitRef` type]: https://jj-vcs.github.io/jj/latest/templates/#commitref-type
+
+  [`jj help -k templates`]: https://jj-vcs.github.io/jj/latest/templates/
+

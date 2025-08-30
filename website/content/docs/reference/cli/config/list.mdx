@@ -1,0 +1,42 @@
+---
+title: jj config list
+isCommand: true
+---
+
+List variables set in config files, along with their values
+
+```shell title="Usage"
+jj config list [OPTIONS] [NAME]
+```
+
+**Command Alias:** `l`
+
+### Arguments
+
+- `<NAME>` — An optional name of a specific config option to look up
+
+### Options
+
+- `--include-defaults` — Whether to explicitly include built-in default values in the list
+- `--include-overridden` — Allow printing overridden values
+- `--user` — Target the user-level config
+- `--repo` — Target the repo-level config
+- `-T`, `--template <TEMPLATE>` — Render each variable using the given template
+
+  The following keywords are available in the template expression:
+
+  * `name: String`: Config name.
+  * `value: ConfigValue`: Value to be formatted in TOML syntax.
+  * `overridden: Boolean`: True if the value is shadowed by other.
+  * `source: String`: Source of the value.
+  * `path: String`: Path to the config file.
+
+  Can be overridden by the `templates.config_list` setting. To
+  see a detailed config list, use the `builtin_config_list_detailed`
+  template.
+
+  See [`jj help -k templates`] for more information.
+
+  [`jj help -k templates`]:
+      https://jj-vcs.github.io/jj/latest/templates/
+

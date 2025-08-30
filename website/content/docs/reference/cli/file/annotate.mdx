@@ -1,0 +1,30 @@
+---
+title: jj file annotate
+isCommand: true
+---
+
+Show the source change for each line of the target file.
+
+Annotates a revision line by line. Each line includes the source change that introduced the associated line. A path to the desired file must be provided.
+
+```shell title="Usage"
+jj file annotate [OPTIONS] <PATH>
+```
+
+### Arguments
+
+- `<PATH>` — the file to annotate
+
+### Options
+
+- `-r`, `--revision <REVSET>` — an optional revision to start at
+- `-T`, `--template <TEMPLATE>` — Render each line using the given template
+
+  All 0-argument methods of the [`AnnotationLine` type] are available as keywords in the template expression. See [`jj help -k templates`] for more information.
+
+  If not specified, this defaults to the `templates.file_annotate` setting.
+
+  [`AnnotationLine` type]: https://jj-vcs.github.io/jj/latest/templates/#annotationline-type
+
+  [`jj help -k templates`]: https://jj-vcs.github.io/jj/latest/templates/
+
