@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "defaultOpen": true,
+  "pages": ["---Getting started---", "index", "installation", "tutorial"]
+}
