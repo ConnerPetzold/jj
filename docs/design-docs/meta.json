@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "git-submodules",
+    "git-submodule-storage",
+    "run",
+    "sparse-v2",
+    "tracking-branches",
+    "copy-tracking"
+  ]
+}

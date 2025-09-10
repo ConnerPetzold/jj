@@ -14,6 +14,8 @@
 
 use std::io::Write as _;
 
+use clap_markdown::MarkdownOptions;
+
 use crate::cli_util::CommandHelper;
 use crate::command_error::CommandError;
 use crate::ui::Ui;
@@ -29,7 +31,11 @@ pub fn cmd_util_markdown_help(
 ) -> Result<(), CommandError> {
     // If we ever need more flexibility, the code of `clap_markdown` is simple and
     // readable. We could reimplement the parts we need without trouble.
-    let markdown = clap_markdown::help_markdown_command(command.app()).into_bytes();
+    let markdown = clap_markdown::help_markdown_command_custom(
+        command.app(),
+        &MarkdownOptions::new().show_footer(false).title("".into()),
+    )
+    .into_bytes();
     ui.stdout().write_all(&markdown)?;
     Ok(())
 }

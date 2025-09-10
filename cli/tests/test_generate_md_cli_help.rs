@@ -12,13 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use insta::assert_snapshot;
+use insta::assert_binary_snapshot;
 
 use crate::common::TestEnvironment;
 
-const PREAMBLE: &str = r#"
-<!-- BEGIN MARKDOWN-->
+const PREAMBLE: &str = r#"---
+title: CLI reference
+---
 
+<Callout type="warning">
+This CLI reference is experimental. It is automatically generated, but
+does not match the `jj help` output exactly.
+
+Run `jj help <COMMAND>` for more authoritative documentation.
+
+If you see a significant difference, feel free to file a bug, or a PR to note the difference here.
+
+</Callout>
 "#;
 
 #[test]
@@ -35,12 +45,7 @@ fn test_generate_markdown_docs_in_docs_dir() {
 
     insta::with_settings!({
         snapshot_path => ".",
-        snapshot_suffix => ".md",
         prepend_module_to_snapshot => false,
-        omit_expression => true,
-        description => "AUTO-GENERATED FILE, DO NOT EDIT. This cli reference is generated \
-                        by a test as an `insta` snapshot. MkDocs includes this snapshot \
-                        from docs/cli-reference.md.",
     },
-    { assert_snapshot!("cli-reference", markdown_help) });
+    { assert_binary_snapshot!("cli-reference.mdx", markdown_help.into()) });
 }

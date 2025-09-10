@@ -116,37 +116,37 @@ const KEYWORDS: &[Keyword] = &[
     Keyword {
         name: "bookmarks",
         description: "Named pointers to revisions (similar to Git's branches)",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "bookmarks.md")),
+        content: "",
     },
     Keyword {
         name: "config",
         description: "How and where to set configuration options",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "config.md")),
+        content: "",
     },
     Keyword {
         name: "filesets",
         description: "A functional language for selecting a set of files",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "filesets.md")),
+        content: "",
     },
     Keyword {
         name: "glossary",
         description: "Definitions of various terms",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "glossary.md")),
+        content: "",
     },
     Keyword {
         name: "revsets",
         description: "A functional language for selecting a set of revision",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "revsets.md")),
+        content: "",
     },
     Keyword {
         name: "templates",
         description: "A functional language to customize command output",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "templates.md")),
+        content: "",
     },
     Keyword {
         name: "tutorial",
         description: "Show a tutorial to get started with jj",
-        content: include_str!(concat!("../../", env!("JJ_DOCS_DIR"), "tutorial.md")),
+        content: "",
     },
 ];
 

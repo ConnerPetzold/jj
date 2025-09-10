@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "pages": [
+    "index",
+    "--- Test ---",
+    "getting-started",
+    "faq",
+    "cli-reference",
+    "testimonials",
+    "community-tools",
+    "concepts",
+    "guides",
+    "reference",
+    "comparisons",
+    "technical-details",
+    "contributing",
+    "design-docs",
+    "roadmap",
+    "changelog"
+  ]
+}
