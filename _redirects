@@ -1,0 +1,3 @@
+/latest/* /v0.33.0/:splat 200
+/older/* /v0.8_or_older/:splat 200
+/* /v0.33.0/:splat 200
