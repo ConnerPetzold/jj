@@ -5,128 +5,15 @@
     "aliases": []
   },
   {
-    "version": "v0.10.0",
-    "title": "v0.10.0",
-    "aliases": []
+    "version": "v0.33.0",
+    "title": "v0.33.0",
+    "aliases": [
+      "latest"
+    ]
   },
   {
-    "version": "v0.11.0",
-    "title": "v0.11.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.12.0",
-    "title": "v0.12.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.13.0",
-    "title": "v0.13.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.14.0",
-    "title": "v0.14.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.15.0",
-    "title": "v0.15.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.15.1",
-    "title": "v0.15.1",
-    "aliases": []
-  },
-  {
-    "version": "v0.16.0",
-    "title": "v0.16.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.17.0",
-    "title": "v0.17.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.17.1",
-    "title": "v0.17.1",
-    "aliases": []
-  },
-  {
-    "version": "v0.18.0",
-    "title": "v0.18.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.19.0",
-    "title": "v0.19.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.20.0",
-    "title": "v0.20.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.21.0",
-    "title": "v0.21.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.22.0",
-    "title": "v0.22.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.23.0",
-    "title": "v0.23.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.24.0",
-    "title": "v0.24.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.25.0",
-    "title": "v0.25.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.26.0",
-    "title": "v0.26.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.27.0",
-    "title": "v0.27.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.28.0",
-    "title": "v0.28.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.28.1",
-    "title": "v0.28.1",
-    "aliases": []
-  },
-  {
-    "version": "v0.28.2",
-    "title": "v0.28.2",
-    "aliases": []
-  },
-  {
-    "version": "v0.29.0",
-    "title": "v0.29.0",
-    "aliases": []
-  },
-  {
-    "version": "v0.30.0",
-    "title": "v0.30.0",
+    "version": "v0.32.0",
+    "title": "v0.32.0",
     "aliases": []
   },
   {
@@ -135,16 +22,134 @@
     "aliases": []
   },
   {
-    "version": "v0.32.0",
-    "title": "v0.32.0",
+    "version": "v0.30.0",
+    "title": "v0.30.0",
     "aliases": []
   },
   {
-    "version": "v0.33.0",
-    "title": "v0.33.0",
-    "aliases": [
-      "latest"
-    ]
+    "version": "v0.29.0",
+    "title": "v0.29.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.28.2",
+    "title": "v0.28.2",
+    "aliases": []
+  },
+  {
+    "version": "v0.28.1",
+    "title": "v0.28.1",
+    "aliases": []
+  },
+  {
+    "version": "v0.28.0",
+    "title": "v0.28.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.27.0",
+    "title": "v0.27.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.26.0",
+    "title": "v0.26.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.25.0",
+    "title": "v0.25.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.24.0",
+    "title": "v0.24.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.23.0",
+    "title": "v0.23.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.22.0",
+    "title": "v0.22.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.21.0",
+    "title": "v0.21.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.20.0",
+    "title": "v0.20.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.19.0",
+    "title": "v0.19.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.18.0",
+    "title": "v0.18.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.17.1",
+    "title": "v0.17.1",
+    "aliases": []
+  },
+  {
+    "version": "v0.17.0",
+    "title": "v0.17.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.16.0",
+    "title": "v0.16.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.15.1",
+    "title": "v0.15.1",
+    "aliases": []
+  },
+  {
+    "version": "v0.15.0",
+    "title": "v0.15.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.14.0",
+    "title": "v0.14.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.13.0",
+    "title": "v0.13.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.12.0",
+    "title": "v0.12.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.11.0",
+    "title": "v0.11.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.10.0",
+    "title": "v0.10.0",
+    "aliases": []
+  },
+  {
+    "version": "v0.9.0",
+    "title": "v0.9.0",
+    "aliases": []
   },
   {
     "version": "v0.8_or_older",
@@ -152,10 +157,5 @@
     "aliases": [
       "older"
     ]
-  },
-  {
-    "version": "v0.9.0",
-    "title": "v0.9.0",
-    "aliases": []
   }
 ]
